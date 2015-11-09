@@ -1,15 +1,10 @@
 ---
 layout: page
-title: About
+title: 
 permalink: /about/
 ---
 
-Some information about you!
+제목 그대로 펭귄 좋아하는 개발자입니다.
+주로 iOS와 Rails를 다룹니다.
 
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
-
-### Contact me
-
-[email@domain.com](mailto:email@domain.com)
+say8425@gmail.com
