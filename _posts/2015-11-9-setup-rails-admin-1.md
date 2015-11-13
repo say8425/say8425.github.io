@@ -15,7 +15,10 @@ admin페이지를 만드는데, 생각보다 귀찮은 작업이었다. 그래�
 여느 gem과 마찬가지로 `Gemfile.rb`에 `gem 'rails_admin'`때려박아주고, `rails g rails_admin:install`명령해주면 setup 이 된다. 그리고 주소창에 `주소/admin` 입력해 접속하면 된다. 신기하게도 model이란 model은 싸그 긁어와 보여주는 rails admin을 볼 수 있을 것이다.
 
 #세팅
-## [translation.missing](https://github.com/sferik/rails_admin/wiki/Translations)
+## [translation.missing!!](https://github.com/sferik/rails_admin/wiki/Translations)
+
+![label_plural.png]({{ site.baseurl }}/images/2015-11-9-setup-rails-admin-1/trans_missing.png)
+
 [I18n](https://github.com/svenfuchs/i18n)gem을 적용했다면, 아마 처음 접속시 translation.missing이라고 뜨면서 일부글들이 제대로 보이지 않을 것이다. 한국어 locale이 없어서 생긴 일인데, [이 translation](https://gist.github.com/YoonjaeYoo/787eb279e5d46c7e96dc)을 다운받아 적당한 이름을 붙여서(펭귄은 rails_admin.ko.yml이라고 붙였다) locale 디렉토리에 넣어주자. 그래도 몇몇 부분이 translation.missing이 뜰 수 있는데, i18n 한국어 locale 파일이 없기 때문이다.. [이 translation](https://github.com/svenfuchs/rails-i18n/blob/master/rails/locale/ko.yml)도 locale 디렉토리에 넣어주자. 끝으로 번역해주신 contributor분들 정말 고맙습니다(__)
 
 ## [devise와 연동하기](https://github.com/sferik/rails_admin/wiki/Devise)
