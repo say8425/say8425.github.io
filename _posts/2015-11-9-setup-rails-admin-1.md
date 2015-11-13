@@ -9,20 +9,20 @@ admin페이지를 만드는데, 생각보다 귀찮은 작업이었다. 그래�
  * [Rails Admin](https://github.com/sferik/rails_admin)
  * [Active Admin](https://github.com/activeadmin/activeadmin)
 
-찾아본 바로는 이 2가지 gem이 admin계의 양대산맥이었다. 무엇을 쓸까 했는데, rails admin 개발자의 신랄한 active admin[디스](http://www.slideshare.net/benoitbenezech/rails-admin-overbest-practices)에 반해 rails admin으로 정했다.~~물론 영어라서 대부분 한 마디도 못알아들었다~~
+찾아본 바로는 이 2가지 gem이 admin계의 양대산맥이었다. 무엇을 쓸까 했는데, rails admin 개발자의 신랄한 active admin [디스](http://www.slideshare.net/benoitbenezech/rails-admin-overbest-practices)에 반해 rails admin으로 정했다.~~물론 영어라서 한 마디도 못알아들었다~~
 
 # 설치
 여느 gem과 마찬가지로 `Gemfile.rb`에 `gem 'rails_admin'`때려박아주고, `rails g rails_admin:install`명령해주면 setup 이 된다. 그리고 주소창에 `주소/admin` 입력해 접속하면 된다. 신기하게도 model이란 model은 싸그 긁어와 보여주는 rails admin을 볼 수 있을 것이다.
 
-#세팅
-## [translation.missing!!](https://github.com/sferik/rails_admin/wiki/Translations)
+# 세팅
+## [Translation.missing](https://github.com/sferik/rails_admin/wiki/Translations)
 
 ![label_plural.png]({{ site.baseurl }}/images/2015-11-9-setup-rails-admin-1/trans_missing.png)
 
-[I18n](https://github.com/svenfuchs/i18n)gem을 적용했다면, 아마 처음 접속시 translation.missing이라고 뜨면서 일부글들이 제대로 보이지 않을 것이다. 한국어 locale이 없어서 생긴 일인데, [이 translation](https://gist.github.com/YoonjaeYoo/787eb279e5d46c7e96dc)을 다운받아 적당한 이름을 붙여서(펭귄은 rails_admin.ko.yml이라고 붙였다) locale 디렉토리에 넣어주자. 그래도 몇몇 부분이 translation.missing이 뜰 수 있는데, i18n 한국어 locale 파일이 없기 때문이다.. [이 translation](https://github.com/svenfuchs/rails-i18n/blob/master/rails/locale/ko.yml)도 locale 디렉토리에 넣어주자. 끝으로 번역해주신 contributor분들 정말 고맙습니다(__)
+[I18n](https://github.com/svenfuchs/i18n) gem을 적용했다면, 일부분이 Translation.missing이라고 표기될 것이다. rails admin 한국어 locale이 없어서 생긴 이슈다. 이 locale을 [다운받아](https://gist.github.com/YoonjaeYoo/787eb279e5d46c7e96dc), 적당한 이름을 붙여(펭귄은 rails_admin.ko.yml이라고 붙였다) locale 디렉토리에 넣어주자. 그래도 몇몇 부분이 Translation.missing이 뜰 수 있는데, I18n 한국어 locale 파일이 없기 때문이다. 이것도 [다운 받아](https://github.com/svenfuchs/rails-i18n/blob/master/rails/locale/ko.yml) locale 디렉토리에 넣어주자. 끝으로 번역해주신 contributor분들 정말 고맙습니다(__)
 
 ## [devise와 연동하기](https://github.com/sferik/rails_admin/wiki/Devise)
-rails admin은 관리자 계정과의 연동을 필요로 한다. 물론 없어도 된다. 하지만 상식적으로 권한 제한을 두지않고 admin 페이지를 오픈 하는 건, `들어와들어와~ 우리집, 어서 **해킹**해줘`와 별 다를바가 없어서 사실상 연동은 필수다. 펭귄은 devise로 이미 만들어둔 admin 모델이 있어서 그 모델과 연동하기로 했다.
+rails admin은 관리자 계정과의 연동을 필요로 한다. 물론 없어도 된다. 하지만 상식적으로 권한 제한을 두지않고 admin 페이지를 오픈 하는 건, **들어와들어와 해킹해줘**와 다를바가 없어서 사실상 연동은 필수다. 펭귄은 devise로 이미 만들어둔 admin 모델이 있어서 그 모델과 연동하기로 했다.
 
 ```ruby
 # rails_admin.rb
@@ -40,7 +40,7 @@ end
 Rails.application.routes.draw do
 	devise_for :admin
 	mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-	...
+...
 end
 ```
 
@@ -61,7 +61,7 @@ RailsAdmin.config do |config|
 end
 ```
 
-가장 간단한 방법으로할는 `config.included_models`이 있다. 코드 그대로 여기에 포함된 모델들만 불러온다. 위 코드와 같은 경우, `article`, `creator`, `porfolio` 모델만 볼러온다. 참고로 rails admin wiki 문서대로 `%w(Article Creator Portfolio)`대신 `["Article", "Creator", "Portfolio"]`해줘도 상관 없지만, 이 syntax는 ruby style guide에 [어긋난다](https://github.com/bbatsov/ruby-style-guide#syntax). style 대로라면 위 코드가 맞아 이 코드를 추천한다.
+가장 간단한 방법으로할는 `config.included_models`이 있다. 코드 그대로 여기에 포함된 모델들만 불러온다. 위 코드와 같은 경우 `article`, `creator`, `porfolio` 모델만 볼러온다. 참고로 rails admin wiki 문서대로 `%w(Article Creator Portfolio)`대신 `["Article", "Creator", "Portfolio"]`해줘도 상관 없지만, 이 syntax는 ruby style guide에 [어긋난다](https://github.com/bbatsov/ruby-style-guide#syntax). style 대로라면 위 코드가 맞아 이 코드를 추천한다.
 
 역으로 특정 모델만 가리고 싶다면, `config.config.excluded_models`를 사용하면 된다.
 
@@ -103,6 +103,9 @@ end
 `navigation_icon`은 이름마다 앞에 Glyphicons을 붙여주는 옵션이다. bootstrap에서 [원하는 icon을 찾아서](http://getbootstrap.com/components/) `glyphicon glyphicon-plus`라는 접두어 대신 `icon`이라는 접두어를 붙여서 넣어주면 된다. 필요하다면 디자이너와 파이팅을 벌이고 넣어주자.
 
 ### 특정 링크 넣기
+
+![label_plural.png]({{ site.baseurl }}/images/2015-11-9-setup-rails-admin-1/navigation_static_links.png)
+
 navigation에 특정 링크가 표시되게 만들 수 있다. 운영자가 작업중에 자주 사용하는 링크가 있다면, 소소한 도움을 줄 수 있다.
 
 ```ruby
