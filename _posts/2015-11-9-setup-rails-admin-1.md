@@ -96,7 +96,7 @@ end
 ```
 소스와 같이 model 마다 config를 넣을 수 있는데, `label`로 이름을 정할 수 있다. `label_plural`란 것도 있는데, 이것은 복수형 라벨을 의미한다.
 
-![label_plural.png]({{ site.baseurl }}/images/2015-11-9-setup-rails-admin/label_plural.png)
+![label_plural.png]({{ site.baseurl }}/images/2015-11-9-setup-rails-admin-1/label_plural.png)
 
 위 이미지는 `Portfolid`모델의 `label_plural`를 '포트폴리오들'로 설정한 이미지이다. 보시다시피 UI상 복수형 명사로 표기해야 할 경우 `포르폴리오들`이라고 표기된다. 하지만 한국어에서 복수형은 어색하므로, 전부 label과 동일하게 바꿔주자. 참고로 `label_plural`를 설정해주지 않으면, 모든 label마다 끝에 s가 붙는 소소한 참사가 일어나므로(예를 들면 포트폴리오s), 꼭 설정해주자.
 
