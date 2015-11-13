@@ -128,5 +128,3 @@ __계속__
 
  * Related Links
   - [Rails admin wiki](https://github.com/sferik/rails_admin/wiki)
-  - [부가기능 설치하기](https://gist.github.com/re4lfl0w/fadc6bee495c63b4f893)
-  - [CloudFlare로 도메인 사용하기](https://addnull.net/build-a-blog-with-jekyll-github-pages-and-cloudflare/)
