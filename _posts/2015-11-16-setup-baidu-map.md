@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Rails admin 사용하기 - 1
+title: 바이두 지도 API 사용하기
 ---
 
 # 개요
