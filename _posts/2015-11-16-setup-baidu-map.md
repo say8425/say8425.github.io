@@ -3,12 +3,12 @@ layout: post
 title: 바이두 지도 API 사용하기
 ---
 
-# 개요
+## 개요
 중국지도를 보려면 구글 맵이 아닌 바이두 맵이 필요하다. 물론 구글 맵으로도 중국지도를 보는 것은 가능하다. 하지만 좌표나 주소 검색이 중국내에서는 불가능하다. 이 때문에 중국지도를 임배디드하려면, 바이두 API가 필요하다. 하지만 온갖 한자로 장식된 바이두를 가입하는 것부터 난관인데, 기것 가입했더니 인증을 위한 핸드폰 번호가 필요하다. 이 때문에 이런 구질구질한 절차 말고 다른 방법이 필요하다.
 
 다행히도 1.5이하 버전 API는 API키를 요구하지 않는다. 이점을 이용해서 구버전 스크립트로 지도를 불러오면 된다. 펭귄이 참고한 [문서](https://github.com/jiazheng/Baidu-Map-API-Learning)는 1.2버전을 사용하였다. 따라서 본 문서도 1.2버전을 기반으로 설명하겠다. 1.3버전도 상관없는 것처럼 보인다. 하지만 1.4버전에는 zooming 버그가 있다. 이것에 대해서는 본문에서 후술하겠다.
 
-# Setup하기
+## Setup하기
 
 ```html
 <script src="http://api.map.baidu.com/api?v=1.2"></script>
@@ -27,7 +27,7 @@ chinaMap.addOverlay(marker);
 
 Google Map API에 비하면 정말 단촐하다. `new BMap.Map()`에 지도가 붙여지길 원하는 div의 ID셀렉터를 넣어주고, [여기서](http://api.map.baidu.com/lbsapi/getpoint/) 얻은 좌표값을 `centerAndZoom`에 넣어주자. 두번째 파라미터는 이름 그대로 zoom 배율이다. 구글 API와 똑같이 마커를 넣어주려면 marker에도 좌표를 넣어서 지도에 `addOverlay()`로 덧붙이면 된다. 귀찮으면 `new BMap.Point`를 변수로 선언해도 좋다. 그러면 끝! 이 아니었다.
 
-# 여긴 어디? 난 누구?
+## 여긴 어디? 난 누구?
 ![이상]({{ site.baseurl }}/images/2015-11-16-setup-baidu-map/above.png)
 ![현실]({{ site.baseurl }}/images/2015-11-16-setup-baidu-map/actual.png)
 

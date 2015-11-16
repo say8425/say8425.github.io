@@ -3,7 +3,7 @@ layout: post
 title: Rails admin 사용하기 - 1
 ---
 
-# 개요
+## 개요
 admin페이지를 만드는데, 생각보다 귀찮은 작업이었다. 그래서 혹시 admin페이지 gem이 있나 찾아보았는데 역시 있었다. 그것도 무려 2가지나!
 
  * [Rails Admin](https://github.com/sferik/rails_admin)
@@ -11,17 +11,17 @@ admin페이지를 만드는데, 생각보다 귀찮은 작업이었다. 그래�
 
 찾아본 바로는 이 2가지 gem이 admin계의 양대산맥이었다. 무엇을 쓸까 했는데, rails admin 개발자의 신랄한 active admin [디스](http://www.slideshare.net/benoitbenezech/rails-admin-overbest-practices)에 반해 rails admin으로 정했다.~~물론 영어라서 한 마디도 못알아들었다~~
 
-# 설치
+## 설치
 여느 gem과 마찬가지로 `Gemfile.rb`에 `gem 'rails_admin'`때려박아주고, `rails g rails_admin:install`명령해주면 setup 이 된다. 그리고 주소창에 `주소/admin` 입력해 접속하면 된다. 신기하게도 model이란 model은 싸그 긁어와 보여주는 rails admin을 볼 수 있을 것이다.
 
-# 세팅
-## [Translation.missing](https://github.com/sferik/rails_admin/wiki/Translations)
+## 세팅
+### [Translation.missing](https://github.com/sferik/rails_admin/wiki/Translations)
 
 ![label_plural.png]({{ site.baseurl }}/images/2015-11-9-setup-rails-admin-1/trans_missing.png)
 
 [I18n](https://github.com/svenfuchs/i18n) gem을 적용했다면, 일부분이 Translation.missing이라고 표기될 것이다. rails admin 한국어 locale이 없어서 생긴 이슈다. 이 locale을 [다운받아](https://gist.github.com/YoonjaeYoo/787eb279e5d46c7e96dc), 적당한 이름을 붙여(펭귄은 rails_admin.ko.yml이라고 붙였다) locale 디렉토리에 넣어주자. 그래도 몇몇 부분이 Translation.missing이 뜰 수 있는데, I18n 한국어 locale 파일이 없기 때문이다. 이것도 [다운 받아](https://github.com/svenfuchs/rails-i18n/blob/master/rails/locale/ko.yml) locale 디렉토리에 넣어주자. 끝으로 번역해주신 contributor분들 정말 고맙습니다(__)
 
-## [devise와 연동하기](https://github.com/sferik/rails_admin/wiki/Devise)
+### [devise와 연동하기](https://github.com/sferik/rails_admin/wiki/Devise)
 rails admin은 관리자 계정과의 연동을 필요로 한다. 물론 없어도 된다. 하지만 상식적으로 권한 제한을 두지않고 admin 페이지를 오픈 하는 건, **들어와들어와 해킹해줘**와 다를바가 없어서 사실상 연동은 필수다. 펭귄은 devise로 이미 만들어둔 admin 모델이 있어서 그 모델과 연동하기로 했다.
 
 ```ruby
@@ -48,7 +48,7 @@ end
 
 `routes.rb`에도 `mount RailsAdmin::Engine => '/admin', as: 'rails_admin'`를 넣어주자. 주의 할 점이 있는데 `devise_for :admin`보다 아래에 넣어줘야만 한다. 안그러면 에러가 난다. 아시다시피 ruby는 `컴파일러`가 아니고 `인터프리터`로 동작하기 때문에 순서가 매우 중요하다.
 
-## [특정 model만 불러오기](https://github.com/sferik/rails_admin/wiki/Navigation)
+### [특정 model만 불러오기](https://github.com/sferik/rails_admin/wiki/Navigation)
 rails_admin이 모든 model을 불러오는 건 원치 않을 것이다. 원하는 모델만 컨트롤  수 있게 만들자.
 
 ```ruby
@@ -65,10 +65,10 @@ end
 
 역으로 특정 모델만 가리고 싶다면, `config.config.excluded_models`를 사용하면 된다.
 
-## [navigation 세팅하기](https://github.com/sferik/rails_admin/wiki/Navigation)
+### [navigation 세팅하기](https://github.com/sferik/rails_admin/wiki/Navigation)
 rails admin 페이지의 left navigation을 건들어서 표기되는 label을 바꾸거나 특정 링크를 넣어줄 수도 있다.
 
-### 라벨 바꾸기
+#### 라벨 바꾸기
 엄밀히는 보여지는 이름을 바꾸는 것이다. 이걸 세팅하기 전까지는 Article Creator등 모델의 이름을 보일 것이다.
 
 ```ruby
@@ -102,7 +102,7 @@ end
 
 `navigation_icon`은 이름마다 앞에 Glyphicons을 붙여주는 옵션이다. bootstrap에서 [원하는 icon을 찾아서](http://getbootstrap.com/components/) `glyphicon glyphicon-plus`라는 접두어 대신 `icon`이라는 접두어를 붙여서 넣어주면 된다. 필요하다면 디자이너와 파이팅을 벌이고 넣어주자.
 
-### 특정 링크 넣기
+#### 특정 링크 넣기
 
 ![label_plural.png]({{ site.baseurl }}/images/2015-11-9-setup-rails-admin-1/navigation_static_links.png)
 
