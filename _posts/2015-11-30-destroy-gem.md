@@ -39,7 +39,7 @@ end
 rails g migration DropBootsy
 ```
 
-그리고 아래와 같은 migration에 코딩해준다. 
+그리고 table을 drop해주는 소스를 코딩하자.
 
 ```ruby
 # VERSION_remove_bootsy.rb
