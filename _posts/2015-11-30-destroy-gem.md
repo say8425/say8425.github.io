@@ -6,6 +6,7 @@
 ## 방법
 ### table 날리기
 우선 migration을 통해 설치된 table을 제거한다. `bootsy`를 예로 들자면, 총 2개의 migrtion이 설치된다. migrate시 `bootsy_images`와 `bootsy_image_galleries`테이블이 설치된다.
+
 ```ruby
 # This migration comes from bootsy (originally 20120624171333)
 class CreateBootsyImages < ActiveRecord::Migration
@@ -31,7 +32,7 @@ end
 
 우선 이 테이블들을 `drop`해주는 migration을 만들어준다.
 
-```shell
+```
 rails g migration DropBootsy
 ```
 
