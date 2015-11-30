@@ -35,7 +35,7 @@ end
 
 우선 이 테이블들을 `drop`해주는 migration을 만들어준다.
 
-```shell
+```
 rails g migration DropBootsy
 ```
 
