@@ -41,5 +41,5 @@ Google Map API에 비하면 정말 단촐하다. `new BMap.Map()`에 지도가 �
 * Related Links
  * [공식문서](http://developer.baidu.com/map/index.php?title=jspopular)
  * [중국내 좌표를 얻을 수 있는 바이두 지도 페이지](http://api.map.baidu.com/lbsapi/getpoint/)
- * [사용되는 함수들 정리한 페이](http://bbs.lbsyun.baidu.com/forum.php?mod=viewthread&tid=3498) : 몇버전 기준인지는 알 수가 없다
+ * [바이두에서 사용되는 함수](http://bbs.lbsyun.baidu.com/forum.php?mod=viewthread&tid=3498) : 몇버전 기준인지는 알 수가 없다
  * [Baidu Map API Learning](https://github.com/jiazheng/Baidu-Map-API-Learning) : 소스만 덩그러니 있지만 어떤 분위기인지 파악하기 좋다
