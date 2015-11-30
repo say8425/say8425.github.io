@@ -1,4 +1,7 @@
-# bundle 설치된 gem 삭제하기
+---
+layout: post
+title: bundle 설치된 gem 삭제하기
+---
 
 ## 개요
 대개의 gem파일든은 `Gemfile.rb`에서 딜릿하는 것만으로 깔끔하게 끝낼 수 있다. 하지만 `devise`나 `bootsy`와 같이 `model`이나 `config`의 설치를 요구하는 gem들은 삭제하기 정말 골룸하다. 수동으로 직접 딜릿하는 방법도 있지만, 위험하고 무엇보다 **귀찮다!** 이 때문에 조금이나마 자동화 된 방법을 소개한다.
@@ -32,7 +35,7 @@ end
 
 우선 이 테이블들을 `drop`해주는 migration을 만들어준다.
 
-```
+```shell
 rails g migration DropBootsy
 ```
 
