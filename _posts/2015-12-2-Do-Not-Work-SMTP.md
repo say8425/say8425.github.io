@@ -78,7 +78,7 @@ smtp가 접속할 주소다. 더이상 설명이 必要韓紙?
 
 > :domain               => '도메인'
 
-툭 까놓고 말해 gmail을 사용할거라면, 무엇을 넣어도 상관없다.~이름값을 못한다~ 이름과 달리 `:domain`은 [HELO 도메인](https://en.wikipedia.org/wiki/Anti-spam_techniques#HELO.2FEHLO_checking)을 설정한다. 하지만 gmail smtp는 HELO 도메인을 [사용하지 않으므로](http://stackoverflow.com/a/8439535/3910390) 무엇을 입력해도 상관없다. 하지만 혹시 모르니 [유지보수 어렵게 코딩하기](http://www.hanbit.co.kr/ebook/look.html?isbn=9788979149418) 마냥 삐딱선 타지 말고 정상적으로 입력해주자. HELO 도메인은 펭귄도 이해하기 어려워서 본 문서에서는 생략하겠다.
+툭 까놓고 말해 gmail을 사용할거라면, 무엇을 넣어도 상관없다. ~~이름값을 못한다~~ 이름과 달리 `:domain`은 [HELO 도메인](https://en.wikipedia.org/wiki/Anti-spam_techniques#HELO.2FEHLO_checking)을 설정한다. 하지만 gmail smtp는 HELO 도메인을 [사용하지 않으므로](http://stackoverflow.com/a/8439535/3910390) 무엇을 입력해도 상관없다. 하지만 혹시 모르니 [유지보수 어렵게 코딩하기](http://www.hanbit.co.kr/ebook/look.html?isbn=9788979149418) 마냥 삐딱선 타지 말고 정상적으로 입력해주자. HELO 도메인은 펭귄도 이해하기 어려워서 본 문서에서는 생략하겠다.
 
 #### :user_name
 
