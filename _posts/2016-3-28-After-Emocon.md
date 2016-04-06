@@ -29,7 +29,7 @@ title: 이모콘을 마치며..
 
   * 헤로게이트 요크셔 골드
 
-![label_plural.png]({{ site.baseurl }}/images/2016-3-28-After-Emocon/tea.JPG)
+![헤로게이트 요크셔 골드]({{ site.baseurl }}/images/2016-3-28-After-Emocon/tea.JPG)
 
 밀트티로 모두가 인정하는 친구입니다. 혹시 요크셔가 질리셨다면 향신료를 시도해보시거나, 아쌈티로 내려 보실 것을 추천해드리겠습니다. 참고로 요크셔는 인터넷에서 보통 22,000원에 팔고 있습니다.
 
