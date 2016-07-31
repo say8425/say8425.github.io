@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Rails admin 사용하기 - 1
+categories: rails
 ---
 
 ## 개요

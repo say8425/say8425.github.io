@@ -1,6 +1,7 @@
 ---
 layout: post
 title: GitHub Page에 정착했다
+categories: notice
 ---
 
 블로그를 해야겠다는 생각은 잔뜩 가지고 있었지만, 그동안 워드프레스로 삽질만 하다가 이제서야 GitHub Page에 안착했다.

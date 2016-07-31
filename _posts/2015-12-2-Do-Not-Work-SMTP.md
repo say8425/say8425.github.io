@@ -1,6 +1,7 @@
 ---
 layout: post
 title: ActionMailer의 smtp가 gmail과 연동되지 않을때
+categories: rails
 ---
 
 ## 개요
@@ -60,7 +61,7 @@ development에서 작동여부를 [설정한다](http://stackoverflow.com/a/2077
 &nbsp;&nbsp;&nbsp;        :enable_starttls_auto => true<br>
 }
 
-smtp에 대한 설정이다. 사실 smtp만 동작하게 만들거면 `config.action_mailer.delivery_method = :smtp`만 빼고 다른 설정은 전부 필요없다. 
+smtp에 대한 설정이다. 사실 smtp만 동작하게 만들거면 `config.action_mailer.delivery_method = :smtp`만 빼고 다른 설정은 전부 필요없다.
 
 #### :address
 

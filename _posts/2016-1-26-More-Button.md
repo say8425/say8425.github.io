@@ -1,6 +1,7 @@
 ---
 layout: post
 title: will_paginate gem으로 more button 만들기
+categories: rails
 ---
 
 ## 개요
@@ -30,7 +31,7 @@ end
 
 그리고 more button을 적용하고 싶은 곳의 컨트롤러에 will_paginate를 세팅하자. 펭귄은 Creator모델 전체를 대상으로 삼았다. 여기에 paginate를 걸어주자. 그리고 매 로드마다 몇개씩 불러올지 `per_page`로 설정하자. 여기까지는 `will_paginate` 기본 세팅하는 방법과 똑같다. 이후가 다르다.
 
-## 
+##
 만약 평범한 pagination을 만들고 싶다면, view 파일에 partial를 render해주고, 하단에 `<%= will_paginate @creators %>`를 붙여주면 끝이다. 하지만 우리는 원하는 것은 more 버튼이라서 다른 방법을 찾아야 한다.
 
 우선 partial를 render해주는 점은 똑같다. 앞서 말했듯이 more button은 pagination과 똑같다. 다만 요청된 새로운 페이지를 예전 페이지와 교체하는 것이 아니고 예전 페이지의 뒤에 이어서 붙이는 거다.

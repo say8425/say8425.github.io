@@ -1,6 +1,7 @@
 ---
 layout: post
 title: rails가 precompile assets를 읽지 못할때
+categories: rails
 ---
 
 1. 이름을 바꾼다. 가장 쉽고 가장 무책임한 방법이다.

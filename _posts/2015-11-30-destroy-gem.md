@@ -1,6 +1,7 @@
 ---
 layout: post
 title: bundle 설치된 gem 삭제하기
+categories: rails
 ---
 
 ## 개요
@@ -54,7 +55,7 @@ end
 이후 `rake db:migrate`해준다. 그러면 소스대로 `bootsy_image_galleries`과 `bootsy_images` 테이블이 drop된다.
 
 ### config와 model 박멸하기
-사실 여기까지는 별로 어려운 것도 아니고 보편적인 방법이다. config와 model을 삭제하는 일이 문제인데, 이곳저곳 꽁꽁 숨어있어서, 일일이 딜릿해주다가 놓치는 경우가 많다. 이 작업을 자동으로 해주는 명령어는 아쉽게도 없다. 하지만 설치한 것을 역으로 파괴하는 명령어는 있다. 
+사실 여기까지는 별로 어려운 것도 아니고 보편적인 방법이다. config와 model을 삭제하는 일이 문제인데, 이곳저곳 꽁꽁 숨어있어서, 일일이 딜릿해주다가 놓치는 경우가 많다. 이 작업을 자동으로 해주는 명령어는 아쉽게도 없다. 하지만 설치한 것을 역으로 파괴하는 명령어는 있다.
 
 가령 bootsy를 예로 들자면 설치시 `rails generate bootsy:install` 명령어를 입력한다. 이와 반대로 uninstall 명령을 해서 해결했으면 좋겠는데, 안타깝게도 rails에 이런 명령어는 없다. 대신 `rails destroy bootsy:install`라는 *파괴적인* 명령어가 있다.
 
