@@ -20,10 +20,9 @@ cd react-study
 npm init
 ```
 
-참고로 앞으로 터미널을 쓸 일이 매우 많으므로
- 디렉토리 생성도 터미널로 해주는 것이 편하다. npm init을 해주면 프로젝트 이름, 작성자, git 레포짓 등을 묻는데, 전부 나중에 바꿔줄 수 있으므로 귀찮다.면 enter를 연타 해주자.
+참고로 앞으로 터미널을 쓸 일이 매우 많으므로 디렉토리 생성도 터미널로 해주는 것이 편하다. npm init을 해주면 프로젝트 이름, 작성자, git 레포짓 등을 묻는데, 전부 나중에 바꿔줄 수 있으므로 귀찮다.면 enter를 연타 해주자.
 
-그리고 패키지를 설치해주자
+그리고 패키지를 설치해주자.
 
 ```
 npm install react react-dom --save
@@ -31,10 +30,7 @@ npm install react webpack webpack-dev-server babel babel-core babel-loader --sav
 npm install react babel-preset-es2015 babel-preset-react --save-dev
 ```
 
-첫번째는 보시다시피 react를 설치한다.
-두번째와 세번째는 바벨과 웹팩을 설치한다.
-
-이 명렁어가 무엇을 의미하는지는 다음에 상세히 서술하겠다.
+첫번째는 보시다시피 react를 설치한다. 두번째와 세번째는 바벨과 웹팩을 설치한다. 이 명렁어가 무엇을 의미하는지는 다음에 상세히 서술하겠다.
 
 ### 소스 작성하기
 
@@ -135,11 +131,7 @@ React.render(<Hello/>, document.getElementById('root'));
 
 ```TypeError: _react2.default.render is not a function. (In '_react2.default.render(_react2.default.createElement(Hello, null), document.getElementById('root'))', '_react2.default.render' is undefined)```
 
-상당히 긴 문구의 에러인데 대충 `render`라는 function을 찾을 수 없다는 에러다. 왜 이런 에러가 났을까?
-그 이유는 [reactjs 0.14버전부터 render는 react-dom으로 옳겨졌기 때문이다](http://stackoverflow.com/a/33880428/3910390
-
-). 그래서 `render`를 찾을 수 없는 것이다.
-`react-dom`을 import하고 여기에서 `render`를 불러오자.
+상당히 긴 문구의 에러인데 대충 `render`라는 function을 찾을 수 없다는 에러다. 왜 이런 에러가 났을까? 그 이유는 [reactjs 0.14버전부터 render는 react-dom으로 옳겨졌기 때문이다](http://stackoverflow.com/a/33880428/3910390). 그래서 `render`를 찾을 수 없는 것이다. `react-dom`을 import하고 여기에서 `render`를 불러오자.
 
 ```
 // source/App.js
@@ -164,9 +156,7 @@ ReactDOM.render(<Hello/>, document.getElementById('root'));
 
 ### One more thing - npm start
 
-로컬 서버를 시작할때 `node_modules/.bin/webpack-dev-server`를 입력했던 것 기억하는가?
-상당히 길어서 타이핑 할때마다 암세포가 생성 될 것이다. 스크립트 명령어를 하나 추가해서 암예방하자.
-`package.json`을 들어가서 `scripts` 키에 `"start": "node_modules/.bin/webpack-dev-server --progress"`란 밸류를 추가하자. 눈치 빠른 사람은 알겠지만 `node_modules/.bin/webpack-dev-server`를 start라는 명령어로 떼우겠다는 코드다. 
+로컬 서버를 시작할때 `node_modules/.bin/webpack-dev-server`를 입력했던 것 기억하는가? 상당히 길어서 타이핑 할때마다 암세포가 생성 될 것이다. 스크립트 명령어를 하나 추가해서 암예방하자. `package.json`을 들어가서 `scripts` 키에 `"start": "node_modules/.bin/webpack-dev-server --progress"`란 밸류를 추가하자. 눈치 빠른 사람은 알겠지만 `node_modules/.bin/webpack-dev-server`를 start라는 명령어로 떼우겠다는 코드다. 
 
 ```
 // package.json
@@ -198,9 +188,16 @@ ReactDOM.render(<Hello/>, document.getElementById('root'));
 }
 ```
 
-최종적으로 `package.json` 코드는 위와 같을 것이다.
-코드를 작성 하였다면 `npm start`로 간단하게 로컬 서버를 실행하자.
+최종적으로 `package.json` 코드는 위와 같을 것이다. 코드를 작성 하였다면 `npm start`로 간단하게 로컬 서버를 실행하자.
 
-다음 포스트에서는 본격적으로 컴포넌트를 가지고 놀겠다.
+### 다음 포스트
+
+다음 포스트에서는 컴포넌트를 가지고 놀겠다.
 참고로 본 연재글은 이론적인 설명보다 소스를 직접 타이핑 해보는 코딩 위주로 진행될 것이다.
 좀 더 자세한 이론적인 배경은 구글신에게 신탁을 받자.
+
+---
+* Related Links
+ * [render를 못찾는 에러에 대한 SO 문서](http://stackoverflow.com/a/33880428/3910390)
+ * [velopert의 reactjs 강좌](https://velopert.com/775)
+ * [reactjs 둘러보기](https://taegon.kim/archives/5097)
