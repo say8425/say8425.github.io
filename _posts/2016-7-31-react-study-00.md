@@ -4,8 +4,6 @@ title: reactjs 공부하기 - 00
 categories: react
 ---
 
-## 시작하기
-
 본 내용은 [프로 리엑트](http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=84599144)라는 책을 스터디하면서 정리한 내용이다. reactjs에 대한 장단점 등은 다른 글에 모두 상세히 잘 쓰여있으므로 생략한다.
 
 ### node.js 설치하기
