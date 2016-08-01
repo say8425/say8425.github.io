@@ -39,6 +39,7 @@ npm install react babel-preset-es2015 babel-preset-react --save-dev
 ### 소스 작성하기
 
 npm 설정 및 설치는 명령어로 할 수 있지만, 나머지 필요한 소스는 직접 작성해야한다. 최종적인 소스트리는 아래와 같을 것이다.
+
 ```
 .
 ├── index.html
