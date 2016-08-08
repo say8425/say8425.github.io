@@ -19,9 +19,8 @@ $white: #fff;
 
 // Font stacks
 $helvetica: Helvetica, Arial, sans-serif;
-$helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$helveticaNeue: "Helvetica Neue", Helvetica, "Noto Sans Korean", Arial, sans-serif;
 $georgia: Georgia, serif;
-$notoSans: "Noto Sans Korean"
 
 // Mobile breakpoints
 @mixin mobile {
