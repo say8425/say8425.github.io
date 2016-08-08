@@ -79,4 +79,4 @@ pengShip-II:Leferi Penguin$ rails destroy bootsy:install
 
 ---
 * Related Links
- * [참고한 StackOverflow 문서](http://stackoverflow.com/a/26219130/3910390)
+  * [참고한 StackOverflow 문서](http://stackoverflow.com/a/26219130/3910390)

@@ -46,11 +46,11 @@ end
 
 ---
 * Related Links
- * [will_pagiante Gem](https://github.com/mislav/will_paginate)
- * [unlimited scroll 하는 법](http://www.sitepoint.com/infinite-scrolling-rails-basics/)
- * [세팅하는 방법에 대한 StackOverflow 문서, 가장 도움되었다](http://stackoverflow.com/a/23591939/3910390)
- * [세팅하는 방법에 대한 StackOverflow 문서 2](http://stackoverflow.com/questions/8378443/will-paginate-with-load-more-button-in-rails-3-1-using-jquery)
- * [세팅하는 방법에 대한 StackOverflow 문서 3](http://stackoverflow.com/questions/5543719/rails-3-kaminari-jquery-load-more-button-problem-to-display-results-it-loads)
- * [ajaxf르 어떻게 짜야할지 힌트를 얻은 StackOverflow 문서](http://stackoverflow.com/questions/7188287/rails-will-paginate-show-next-10-button)
- * [pagination대신 다른걸 만드는 법에 대한 StackOverflow 문서, 시도는 안해봤다](http://stackoverflow.com/questions/2497821/rails-load-more-instead-of-pagination)
- * [kaminari로 more button 만들기](https://github.com/amatsuda/kaminari/wiki/How-To%3A-Create-Infinite-Scrolling-with-jQuery)
+  * [will_pagiante Gem](https://github.com/mislav/will_paginate)
+  * [unlimited scroll 하는 법](http://www.sitepoint.com/infinite-scrolling-rails-basics/)
+  * [세팅하는 방법에 대한 StackOverflow 문서, 가장 도움되었다](http://stackoverflow.com/a/23591939/3910390)
+  * [세팅하는 방법에 대한 StackOverflow 문서 2](http://stackoverflow.com/questions/8378443/will-paginate-with-load-more-button-in-rails-3-1-using-jquery)
+  * [세팅하는 방법에 대한 StackOverflow 문서 3](http://stackoverflow.com/questions/5543719/rails-3-kaminari-jquery-load-more-button-problem-to-display-results-it-loads)
+  * [ajaxf르 어떻게 짜야할지 힌트를 얻은 StackOverflow 문서](http://stackoverflow.com/questions/7188287/rails-will-paginate-show-next-10-button)
+  * [pagination대신 다른걸 만드는 법에 대한 StackOverflow 문서, 시도는 안해봤다](http://stackoverflow.com/questions/2497821/rails-load-more-instead-of-pagination)
+  * [kaminari로 more button 만들기](https://github.com/amatsuda/kaminari/wiki/How-To%3A-Create-Infinite-Scrolling-with-jQuery)

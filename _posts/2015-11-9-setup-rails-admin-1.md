@@ -125,7 +125,5 @@ end
 
 __계속__
 
-
-
- * Related Links
-  - [Rails admin wiki](https://github.com/sferik/rails_admin/wiki)
+* Related Links
+	* [Rails admin wiki](https://github.com/sferik/rails_admin/wiki)

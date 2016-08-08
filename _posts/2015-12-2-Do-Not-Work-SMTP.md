@@ -119,8 +119,8 @@ smtp 서버가 tls를 사용하는지 감지해서, 사용하면 켜고, 미사�
 
 ---
 * Related Links
- * [Action Mailer 공식 가이드](http://edgeguides.rubyonrails.org/action_mailer_basics.html)
- * [Gmail 보안수준이 낮은 앱 액세스 허용하기](https://www.google.com/settings/security/lesssecureapps)
- * [contacu_us gem으로 contacu us 페이지 만들기](http://l4u.github.io/articles/create-a-rails-4-site-with-contact-us-form/)
- * [Action Mailer로 초기 세팅부터 페이지까지 만들기](https://matharvard.ca/posts/2014/jan/11/contact-form-in-rails-4/)
- * [smtp 설정하기](http://usingname.space/2015/07/25/gmail-smtp-ruby-on-rails-actionmailer-and-you/)
+  * [Action Mailer 공식 가이드](http://edgeguides.rubyonrails.org/action_mailer_basics.html)
+  * [Gmail 보안수준이 낮은 앱 액세스 허용하기](https://www.google.com/settings/security/lesssecureapps)
+  * [contacu_us gem으로 contacu us 페이지 만들기](http://l4u.github.io/articles/create-a-rails-4-site-with-contact-us-form/)
+  * [Action Mailer로 초기 세팅부터 페이지까지 만들기](https://matharvard.ca/posts/2014/jan/11/contact-form-in-rails-4/)
+  * [smtp 설정하기](http://usingname.space/2015/07/25/gmail-smtp-ruby-on-rails-actionmailer-and-you/)

@@ -198,6 +198,6 @@ ReactDOM.render(<Hello/>, document.getElementById('root'));
 
 ---
 * Related Links
- * [render를 못찾는 에러에 대한 SO 문서](http://stackoverflow.com/a/33880428/3910390)
- * [velopert의 reactjs 강좌](https://velopert.com/775)
- * [reactjs 둘러보기](https://taegon.kim/archives/5097)
+  * [render를 못찾는 에러에 대한 SO 문서](http://stackoverflow.com/a/33880428/3910390)
+  * [velopert의 reactjs 강좌](https://velopert.com/775)
+  * [reactjs 둘러보기](https://taegon.kim/archives/5097)

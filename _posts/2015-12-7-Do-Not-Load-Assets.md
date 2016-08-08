@@ -11,4 +11,4 @@ categories: rails
 
 ---
 * Related Links
- * [4번 방법을 알려준 Stack Overflow](http://stackoverflow.com/a/11107762/3910390)
+  * [4번 방법을 알려준 Stack Overflow](http://stackoverflow.com/a/11107762/3910390)
