@@ -60,4 +60,4 @@ ReactDOM.render(<Hello/>, document.getElementById('root'));
 
 ---
 * Related Links
- * [비구화 할당 MDN 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+  * [비구화 할당 MDN 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
