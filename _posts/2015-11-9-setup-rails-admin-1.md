@@ -16,11 +16,11 @@ admin페이지를 만드는데, 생각보다 귀찮은 작업이었다. 그래�
 여느 gem과 마찬가지로 `Gemfile.rb`에 `gem 'rails_admin'`때려박아주고, `rails g rails_admin:install`명령해주면 setup 이 된다. 그리고 주소창에 `주소/admin` 입력해 접속하면 된다. 신기하게도 model이란 model은 싸그 긁어와 보여주는 rails admin을 볼 수 있을 것이다.
 
 ## 세팅
-### [Translation.missing](https://github.com/sferik/rails_admin/wiki/Translations)
+### Translation.missing
 
 ![label_plural.png]({{ site.baseurl }}/images/2015-11-9-setup-rails-admin-1/trans_missing.png)
 
-[I18n](https://github.com/svenfuchs/i18n) gem을 적용했다면, 일부분이 Translation.missing이라고 표기될 것이다. rails admin 한국어 locale이 없어서 생긴 이슈다. 이 locale을 [다운받아](https://gist.github.com/YoonjaeYoo/787eb279e5d46c7e96dc), 적당한 이름을 붙여(펭귄은 rails_admin.ko.yml이라고 붙였다) locale 디렉토리에 넣어주자. 그래도 몇몇 부분이 Translation.missing이 뜰 수 있는데, I18n 한국어 locale 파일이 없기 때문이다. 이것도 [다운 받아](https://github.com/svenfuchs/rails-i18n/blob/master/rails/locale/ko.yml) locale 디렉토리에 넣어주자. 끝으로 번역해주신 contributor분들 정말 고맙습니다(__)
+[I18n](https://github.com/svenfuchs/i18n) gem을 적용했다면, 일부분이 [Translation.missing](https://github.com/sferik/rails_admin/wiki/Translations)이라고 표기될 것이다. rails admin 한국어 locale이 없어서 생긴 이슈다. 이 locale을 [다운받아](https://gist.github.com/YoonjaeYoo/787eb279e5d46c7e96dc), 적당한 이름을 붙여(펭귄은 rails_admin.ko.yml이라고 붙였다) locale 디렉토리에 넣어주자. 그래도 몇몇 부분이 Translation.missing이 뜰 수 있는데, I18n 한국어 locale 파일이 없기 때문이다. 이것도 [다운 받아](https://github.com/svenfuchs/rails-i18n/blob/master/rails/locale/ko.yml) locale 디렉토리에 넣어주자. 끝으로 번역해주신 contributor분들 정말 고맙습니다(__)
 
 ### [devise와 연동하기](https://github.com/sferik/rails_admin/wiki/Devise)
 rails admin은 관리자 계정과의 연동을 필요로 한다. 물론 없어도 된다. 하지만 상식적으로 권한 제한을 두지않고 admin 페이지를 오픈 하는 건, **들어와들어와 해킹해줘**와 다를바가 없어서 사실상 연동은 필수다. 펭귄은 devise로 이미 만들어둔 admin 모델이 있어서 그 모델과 연동하기로 했다.
@@ -122,8 +122,5 @@ end
 굳이 꼭 넣어줄 기능은 아니다. 일종의 선택사항이므로 필요하다면 넣어주자.
 
 ---
-
-__계속__
-
 * Related Links
 	* [Rails admin wiki](https://github.com/sferik/rails_admin/wiki)
