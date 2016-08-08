@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'Noto Sans Korean';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Noto Sans Thin'), local('NotoSans-Thin'),
+    url(https://d1syjqtm3n9oqz.cloudfront.net/notoSana-hestia/eot/NotoSansKR-Thin-Hestia.eot),
+    url(https://d1syjqtm3n9oqz.cloudfront.net/notoSana-hestia/eot/NotoSansKR-Thin-Hestia.eot?#iefix) format('embedded-opentype'),
+    url(https://d1syjqtm3n9oqz.cloudfront.net/notoSana-hestia/woff/NotoSansKR-Thin-Hestia.woff) format('woff'),
+    url(https://d1syjqtm3n9oqz.cloudfront.net/notoSana-hestia/otf/NotoSansKR-Thin-Hestia.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans Korean';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Noto Sans Light'), local('NotoSans-Light'),
+    url(https://d1syjqtm3n9oqz.cloudfront.net/notoSana-hestia/eot/NotoSansKR-Light-Hestia.eot),
+    url(https://d1syjqtm3n9oqz.cloudfront.net/notoSana-hestia/eot/NotoSansKR-Light-Hestia.eot?#iefix) format('embedded-opentype'),
+    url(https://d1syjqtm3n9oqz.cloudfront.net/notoSana-hestia/woff/NotoSansKR-Light-Hestia.woff) format('woff'),
+    url(https://d1syjqtm3n9oqz.cloudfront.net/notoSana-hestia/otf/NotoSansKR-Light-Hestia.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans Korean';
+    font-style: normal;
+    font-weight: 350;
+    src: local('Noto Sans DemiLight'), local('NotoSans-DemiLight'),
+    url(https://d1syjqtm3n9oqz.cloudfront.net/notoSana-hestia/eot/NotoSansKR-DemiLight-Hestia.eot),
+    url(https://d1syjqtm3n9oqz.cloudfront.net/notoSana-hestia/eot/NotoSansKR-DemiLight-Hestia.eot?#iefix) format('embedded-opentype'),
+    url(https://d1syjqtm3n9oqz.cloudfront.net/notoSana-hestia/woff/NotoSansKR-DemiLight-Hestia.woff) format('woff'),
+    url(https://d1syjqtm3n9oqz.cloudfront.net/notoSana-hestia/otf/NotoSansKR-DemiLight-Hestia.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans Korean';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Noto Sans Regular'), local('NotoSans-Regular'),
+    url(https://d1syjqtm3n9oqz.cloudfront.net/notoSana-hestia/eot/NotoSansKR-Regular-Hestia.eot),
+    url(https://d1syjqtm3n9oqz.cloudfront.net/notoSana-hestia/eot/NotoSansKR-Regular-Hestia.eot?#iefix) format('embedded-opentype'),
+    url(https://d1syjqtm3n9oqz.cloudfront.net/notoSana-hestia/woff/NotoSansKR-Regular-Hestia.woff) format('woff'),
+    url(https://d1syjqtm3n9oqz.cloudfront.net/notoSana-hestia/otf/NotoSansKR-Regular-Hestia.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans Korean';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Noto Sans Medium'), local('NotoSans-Medium'),
+    url(https://d1syjqtm3n9oqz.cloudfront.net/notoSana-hestia/eot/NotoSansKR-Medium-Hestia.eot),
+    url(https://d1syjqtm3n9oqz.cloudfront.net/notoSana-hestia/eot/NotoSansKR-Medium-Hestia.eot?#iefix) format('embedded-opentype'),
+    url(https://d1syjqtm3n9oqz.cloudfront.net/notoSana-hestia/woff/NotoSansKR-Medium-Hestia.woff) format('woff'),
+    url(https://d1syjqtm3n9oqz.cloudfront.net/notoSana-hestia/otf/NotoSansKR-Medium-Hestia.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans Korean';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Noto Sans Bold'), local('NotoSans-Bold'),
+    url(https://d1syjqtm3n9oqz.cloudfront.net/notoSana-hestia/eot/NotoSansKR-Bold-Hestia.eot),
+    url(https://d1syjqtm3n9oqz.cloudfront.net/notoSana-hestia/eot/NotoSansKR-Bold-Hestia.eot?#iefix) format('embedded-opentype'),
+    url(https://d1syjqtm3n9oqz.cloudfront.net/notoSana-hestia/woff/NotoSansKR-Bold-Hestia.woff) format('woff'),
+    url(https://d1syjqtm3n9oqz.cloudfront.net/notoSana-hestia/otf/NotoSansKR-Bold-Hestia.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans Korean';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Noto Sans Black'), local('NotoSans-Black'),
+    url(https://d1syjqtm3n9oqz.cloudfront.net/notoSana-hestia/eot/NotoSansKR-Black-Hestia.eot),
+    url(https://d1syjqtm3n9oqz.cloudfront.net/notoSana-hestia/eot/NotoSansKR-Black-Hestia.eot?#iefix) format('embedded-opentype'),
+    url(https://d1syjqtm3n9oqz.cloudfront.net/notoSana-hestia/woff/NotoSansKR-Black-Hestia.woff) format('woff'),
+    url(https://d1syjqtm3n9oqz.cloudfront.net/notoSana-hestia/otf/NotoSansKR-Black-Hestia.otf) format('opentype');
+}
