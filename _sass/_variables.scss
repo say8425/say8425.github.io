@@ -14,10 +14,14 @@ $gray: #666;
 $lightGray: #eee;
 $white: #fff;
 
+// Import Noto Sans font
+@import "noto_sans"
+
 // Font stacks
 $helvetica: Helvetica, Arial, sans-serif;
 $helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $georgia: Georgia, serif;
+$notoSans: "Noto Sans Korean"
 
 // Mobile breakpoints
 @mixin mobile {
