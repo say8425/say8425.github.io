@@ -37,7 +37,7 @@ class ListItem extends Component {
 ReactDOM.render(<GroceryList />, document.getElementById('root'));
 ```
 
-전에 작성한 코드와 달리 `class`가 2개가 선언 된 것이 보일 것이다. `extends Component`가 보인가? 해당 클래스를 컴포넌트로 사용하겠다고 선언 한 것이다. 그러니까 우리는 이미 컴포넌트를 사용한 것이다. 첫번째 컴포넌트 `GroceryList`를 보자. `<ListItem quantity="1" name="Bread" />`라는 구문이 있다. 이것은 `ListItem`이라는 컴포넌트를 사용하고, 해당 컴포넌트의 quantity와 name이라는 property에 각각 "1"과 "Bread"라는 값을 넣겠다는 것이다. 그러면 이 컴포넌트는 어디 있는가? 바로 아래에 있다. 
+전에 작성한 코드와 달리 `class` 가 2개가 선언 된 것이 보일 것이다. `extends Component` 가 보인가? 해당 클래스를 컴포넌트로 사용하겠다고 선언 한 것이다. 그러니까 우리는 이미 컴포넌트를 사용한 것이다. 첫번째 컴포넌트 `GroceryList` 를 보자. `<ListItem quantity="1" name="Bread" />` 라는 구문이 있다. 이것은 `ListItem`이라는 컴포넌트를 사용하고, 해당 컴포넌트의 quantity와 name이라는 property에 각각 "1"과 "Bread"라는 값을 넣겠다는 것이다. 그러면 이 컴포넌트는 어디 있는가? 바로 아래에 있다. 
 
 아래에 `class ListItem extends Component`라는 또다른 클래스가 선언 된 것이 보일 것이다. 이 컴포넌트를 보자. 이 컴포넌트는 <li>태그를 반환한다. 어떻게 반환하는가? `{this.props.quantity} x {this.props.name}`라는 값을 품고. 이 값은 무엇일까? `{}` 혹시 기억하는가? 이것은 변환 될 수 있는 값임을 의미한다. `{}`안에는 `this.props.quantity`라는 구문이 있다. 보이는대로 이 컴포넌트의 __quantity라는 속성__을 의미한다. 다시 `GroceryList`컴포넌트에서 호출한 `<ListItem quantity="1" name="Bread" />`구문을 보자. `quantity="1"`가 보인가? `ListItem`라는 컴포넌트를 호출하면서 quantity의 속성은 "1"로 넣어줬다. 그리고 name 속성은 "Bread". 그래서 결좌적으로 `ListItem`컴포넌트는 아래와 같이 반환한다.
 
