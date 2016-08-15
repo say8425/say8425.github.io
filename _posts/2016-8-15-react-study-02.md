@@ -41,7 +41,9 @@ ReactDOM.render(<GroceryList />, document.getElementById('root'));
 
 아래에 `class ListItem extends Component`라는 또다른 클래스가 선언 된 것이 보일 것이다. 이 컴포넌트를 보자. 이 컴포넌트는 <li>태그를 반환한다. 어떻게 반환하는가? `{this.props.quantity} x {this.props.name}`라는 값을 품고. 이 값은 무엇일까? `{}` 혹시 기억하는가? 이것은 변환 될 수 있는 값임을 의미한다. `{}`안에는 `this.props.quantity`라는 구문이 있다. 보이는대로 이 컴포넌트의 __quantity라는 속성__을 의미한다. 다시 `GroceryList`컴포넌트에서 호출한 `<ListItem quantity="1" name="Bread" />`구문을 보자. `quantity="1"`가 보인가? `ListItem`라는 컴포넌트를 호출하면서 quantity의 속성은 "1"로 넣어줬다. 그리고 name 속성은 "Bread". 그래서 결좌적으로 `ListItem`컴포넌트는 아래와 같이 반환한다.
 
-```<li>1 x Bread</li>```
+```
+<li>1 x Bread</li>
+```
 
 `<ListItem quantity="6" name="Eggs" />`도 마찬가지로 `<li>6 x Eggs</li>`라는 구문을 반환한다. 다만 실제 반환되는 값은 이렇게 간단하지 않지만 지금은 이렇게 알고 가자.
 
