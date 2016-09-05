@@ -4,7 +4,7 @@ title: bootstrap tab과 pill을 data 속성으로 동작시키기
 categories: bootstrap
 ---
 
-[bootstrap navs](http://getbootstrap.com/components/#nav)는 크게 두 부분으로 나뉘어진다. 메뉴를 보여주는 _.nav_와 각 메뉴의 내용인 _.tab-pane_을 품고있는 _.tab-content_로 나뉘어진다. 각 메뉴를 클릭하면 해당 메뉴는 target하고 있는 _.tab-pane_을 보여주고 다른 _.tab-pane_은 감춘다. 간단한 소스로 보여주면 아래와 같다.
+[bootstrap navs](http://getbootstrap.com/components/#nav)는 크게 두 부분으로 나뉘어진다. 메뉴를 보여주는 `.nav`와 각 메뉴의 내용인 `.tab-pane`을 품고있는 `.tab-content`로 나뉘어진다. 각 메뉴를 클릭하면 해당 메뉴는 target하고 있는 `.tab-pane`을 보여주고 다른 `.tab-pane`은 감춘다. 간단한 소스로 보여주면 아래와 같다.
 
 ```
 <ul class="nav nav-pills">
@@ -26,7 +26,7 @@ categories: bootstrap
 </div>
 ```
 
-_data-target_은 id 셀렉터든 클래스 셀렉터든 상관 없으며, 여러개를 target할 수 있다. 또한 _data-target_속성 대신 _href_속성으로도 target할 수 있다. 하지만 bootstrap 가이드에서는 _href_와 _data-target_속성을 같이 지정했는데, 아마도 _data_속성을 지원하지 않는 몇몇 브라우저를 대비한 것이 아닌가 추측된다. 
+`data-target`은 id 셀렉터든 클래스 셀렉터든 상관 없으며, 여러개를 target할 수 있다. 또한 `data-target`속성 대신 `href`속성으로도 target할 수 있다. 하지만 bootstrap 가이드에서는 `href`와 `data-target`속성을 같이 지정했는데, 아마도 `data`속성을 지원하지 않는 몇몇 브라우저를 대비한 것이 아닌가 추측된다. 
 
 ___
 * related links

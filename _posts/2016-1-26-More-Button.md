@@ -19,7 +19,7 @@ more button은 몇 개의 아이템을 샘플로 보여주고, 이후 유저의 
 pagination을 만들어주는 gem은 몇 개 없다. 대표적인 gem으로 [kaminari](https://github.com/amatsuda/kaminari)와 [will_paginate](https://github.com/mislav/will_paginate)가 있으며, 이 중 펭귄은 will_paginate를 이미 사용하고 있어서, 이 gem으로 만들기로 했다. 물론 [kaminari로도 만들 수 있으니](https://github.com/amatsuda/kaminari/wiki/How-To%3A-Create-Infinite-Scrolling-with-jQuery), 관심있다면 구글신께 신탁을 받아보자.
 
 ## 시작은 똑같으리니..
-will_paginate gem 설치하는 방법은 생략하겠다. 이미 [gitHub문서](https://github.com/mislav/will_paginate/wiki/Installation)에 상세히 나와있고, 특별히 어려운 거 없이 Gemfile.rb에 붙이고, _bundle install_ 돌려주면 끝이다.
+will_paginate gem 설치하는 방법은 생략하겠다. 이미 [gitHub문서](https://github.com/mislav/will_paginate/wiki/Installation)에 상세히 나와있고, 특별히 어려운 거 없이 Gemfile.rb에 붙이고, `bundle install` 돌려주면 끝이다.
 
 ```ruby
 # CreatorsController
@@ -29,10 +29,10 @@ def index
 end
 ```
 
-그리고 more button을 적용하고 싶은 곳의 컨트롤러에 will_paginate를 세팅하자. 펭귄은 Creator모델 전체를 대상으로 삼았다. 여기에 paginate를 걸어주자. 그리고 매 로드마다 몇개씩 불러올지 _per_page_로 설정하자. 여기까지는 _will_paginate_ 기본 세팅하는 방법과 똑같다. 이후가 다르다.
+그리고 more button을 적용하고 싶은 곳의 컨트롤러에 will_paginate를 세팅하자. 펭귄은 Creator모델 전체를 대상으로 삼았다. 여기에 paginate를 걸어주자. 그리고 매 로드마다 몇개씩 불러올지 `per_page`로 설정하자. 여기까지는 `will_paginate` 기본 세팅하는 방법과 똑같다. 이후가 다르다.
 
 ##
-만약 평범한 pagination을 만들고 싶다면, view 파일에 partial를 render해주고, 하단에 _<%= will_paginate @creators %>_를 붙여주면 끝이다. 하지만 우리는 원하는 것은 more 버튼이라서 다른 방법을 찾아야 한다.
+만약 평범한 pagination을 만들고 싶다면, view 파일에 partial를 render해주고, 하단에 `<%= will_paginate @creators %>`를 붙여주면 끝이다. 하지만 우리는 원하는 것은 more 버튼이라서 다른 방법을 찾아야 한다.
 
 우선 partial를 render해주는 점은 똑같다. 앞서 말했듯이 more button은 pagination과 똑같다. 다만 요청된 새로운 페이지를 예전 페이지와 교체하는 것이 아니고 예전 페이지의 뒤에 이어서 붙이는 거다.
 
@@ -42,7 +42,7 @@ end
 
 
 ## 결론
-사실 펭귄과 같은 이슈는 매우 드문 케이스같아 보였다. 아무리 구글링을 해도 이런 해결법은 어디에도 제시되지 않았기 때문이다. 따라서 보통은 철자가 틀리거나 서버를 껐다키지 않아 이슈가 생긴다. 반대로 말해 철자만 안틀리면 이슈가 생길리가 없다. 물론 _:authentication_이라든가 몇 가지 변수는 있으므로, 재설정하고나면 꼭 서버를 껐다키자.
+사실 펭귄과 같은 이슈는 매우 드문 케이스같아 보였다. 아무리 구글링을 해도 이런 해결법은 어디에도 제시되지 않았기 때문이다. 따라서 보통은 철자가 틀리거나 서버를 껐다키지 않아 이슈가 생긴다. 반대로 말해 철자만 안틀리면 이슈가 생길리가 없다. 물론 `:authentication`이라든가 몇 가지 변수는 있으므로, 재설정하고나면 꼭 서버를 껐다키자.
 
 ---
 * Related Links
