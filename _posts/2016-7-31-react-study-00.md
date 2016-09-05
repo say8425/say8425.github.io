@@ -57,7 +57,7 @@ npm 설정 및 설치는 명령어로 할 수 있지만, 나머지 필요한 소
 
 #### index.htmll
 
-읽어들일 html 파일을 만들어주자. `index.html`파일을 최상위 path에 생성해 아래와 같이 코딩하자.
+읽어들일 html 파일을 만들어주자. _index.html_파일을 최상위 path에 생성해 아래와 같이 코딩하자.
 
 ```
 <!-- index.htmll -->
@@ -73,12 +73,12 @@ npm 설정 및 설치는 명령어로 할 수 있지만, 나머지 필요한 소
 </html>
 ```
 
-보시다시피 평범한 html파일이다. 다만 `root`라는 id셀렉터를 가진 div가 있는데, reactjs가 생성한 컴포넌트는 이 div에 위치될 것이다.
-`bundle.js`는 webpack이 js들을 취합하여 생성한 js이다. 엄밀히는 취합이라는 단어가 정확하지 않지만 지금은 이렇게 설명하고 넘어가겠다.
+보시다시피 평범한 html파일이다. 다만 _root_라는 id셀렉터를 가진 div가 있는데, reactjs가 생성한 컴포넌트는 이 div에 위치될 것이다.
+_bundle.js_는 webpack이 js들을 취합하여 생성한 js이다. 엄밀히는 취합이라는 단어가 정확하지 않지만 지금은 이렇게 설명하고 넘어가겠다.
 
 #### webpack.config.js
 
-그 뒤 webpack을 설정하는 파일을 생성한다. 파일명은 `webpack.config.js`로 해주며 path는 마찬가지로 최상위이다.
+그 뒤 webpack을 설정하는 파일을 생성한다. 파일명은 _webpack.config.js_로 해주며 path는 마찬가지로 최상위이다.
 
 ```
 // webpack.config.js
@@ -105,7 +105,7 @@ module.exports = {
 
 #### source/App.js
 
-마지막으로 react 컴포넌트를 생성해주는 js파일을 만들어준다. `App.js`라는 이름으로 만들어주며 path는 `source`디렉토리이다. `App.js`뿐만 아니라, js와 css들은 이 디렉토리에 위치된다. 그래서 webpack설정에도 `entry: ['./source/App.js']`와 같이 잡혀있다.
+마지막으로 react 컴포넌트를 생성해주는 js파일을 만들어준다. _App.js_라는 이름으로 만들어주며 path는 _source_디렉토리이다. _App.js_뿐만 아니라, js와 css들은 이 디렉토리에 위치된다. 그래서 webpack설정에도 _entry: ['./source/App.js']_와 같이 잡혀있다.
 
 ```
 // source/App.js
@@ -122,8 +122,8 @@ class Hello extends React.Component {
 React.render(<Hello/>, document.getElementById('root'));
 ```
 
-그리고 `node_modules/.bin/webpack-dev-server`라는 상당히 긴 명령을 터미널에서 실행하면 로컬서버가 돌아간다.
-`localhost:8080`을 접속해서 우리가 코딩 한 것을 확인해보자.
+그리고 _node_modules/.bin/webpack-dev-server_라는 상당히 긴 명령을 터미널에서 실행하면 로컬서버가 돌아간다.
+_localhost:8080_을 접속해서 우리가 코딩 한 것을 확인해보자.
 
 ![react-error-page]({{ site.baseurl }}/images/2016-7-31-react-study-00/error-blank.png)
 
@@ -131,7 +131,7 @@ React.render(<Hello/>, document.getElementById('root'));
 
 ```TypeError: _react2.default.render is not a function. (In '_react2.default.render(_react2.default.createElement(Hello, null), document.getElementById('root'))', '_react2.default.render' is undefined)```
 
-상당히 긴 문구의 에러인데 대충 `render`라는 function을 찾을 수 없다는 에러다. 왜 이런 에러가 났을까? 그 이유는 [reactjs 0.14버전부터 render는 react-dom으로 옳겨졌기 때문이다](http://stackoverflow.com/a/33880428/3910390). 그래서 `render`를 찾을 수 없는 것이다. `react-dom`을 import하고 여기에서 `render`를 불러오자.
+상당히 긴 문구의 에러인데 대충 _render_라는 function을 찾을 수 없다는 에러다. 왜 이런 에러가 났을까? 그 이유는 [reactjs 0.14버전부터 render는 react-dom으로 옳겨졌기 때문이다](http://stackoverflow.com/a/33880428/3910390). 그래서 _render_를 찾을 수 없는 것이다. _react-dom_을 import하고 여기에서 _render_를 불러오자.
 
 ```
 // source/App.js
@@ -156,7 +156,7 @@ ReactDOM.render(<Hello/>, document.getElementById('root'));
 
 ### One more thing - npm start
 
-로컬 서버를 시작할때 `node_modules/.bin/webpack-dev-server`를 입력했던 것 기억하는가? 상당히 길어서 타이핑 할때마다 암세포가 생성 될 것이다. 스크립트 명령어를 하나 추가해서 암예방하자. `package.json`을 들어가서 `scripts` 키에 `"start": "node_modules/.bin/webpack-dev-server --progress"`란 밸류를 추가하자. 눈치 빠른 사람은 알겠지만 `node_modules/.bin/webpack-dev-server`를 start라는 명령어로 떼우겠다는 코드다. 
+로컬 서버를 시작할때 _node_modules/.bin/webpack-dev-server_를 입력했던 것 기억하는가? 상당히 길어서 타이핑 할때마다 암세포가 생성 될 것이다. 스크립트 명령어를 하나 추가해서 암예방하자. _package.json_을 들어가서 _scripts_ 키에 _"start": "node_modules/.bin/webpack-dev-server --progress"_란 밸류를 추가하자. 눈치 빠른 사람은 알겠지만 _node_modules/.bin/webpack-dev-server_를 start라는 명령어로 떼우겠다는 코드다. 
 
 ```
 // package.json
@@ -188,7 +188,7 @@ ReactDOM.render(<Hello/>, document.getElementById('root'));
 }
 ```
 
-최종적으로 `package.json` 코드는 위와 같을 것이다. 코드를 작성 하였다면 `npm start`로 간단하게 로컬 서버를 실행하자.
+최종적으로 _package.json_ 코드는 위와 같을 것이다. 코드를 작성 하였다면 _npm start_로 간단하게 로컬 서버를 실행하자.
 
 ### 다음 포스트
 
