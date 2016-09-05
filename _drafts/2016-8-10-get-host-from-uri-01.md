@@ -6,14 +6,14 @@ categories: rails
 
 ```https://www.google.com:80```
 
-와 같은 URI에서 `google.com` 와 같은 host를 추출해내야 했다. 어떻게 하면 될까? 가장 간단한 방법으로 루비가 지원하는 `URI`라이브러리를 사용하는 방법이 있다. 우선 `URI.parse`를 사용해 `URI`패턴으로 분석한다. 그리고 host를 추출하면 된다.
+와 같은 URI에서 __google.com__ 와 같은 host를 추출해내야 했다. 어떻게 하면 될까? 가장 간단한 방법으로 루비가 지원하는 __URI__라이브러리를 사용하는 방법이 있다. 우선 __URI.parse__를 사용해 __URI__패턴으로 분석한다. 그리고 host를 추출하면 된다.
 
 ```
 URI.parse('https://google.com:80').host
 => "google.com"
 ```
 
-정말 심플하다. 프로토콜이나 포트번호같은 것은 제외하고 순수하게 host만 뽑아왔다. 하지만 만약 `https://www.google.com`나 `https://map.googlle.com`와 같이 `www`혹은 `map`과 같은 서브도메인이 포함되었다면 따로 제거해야한다.
+정말 심플하다. 프로토콜이나 포트번호같은 것은 제외하고 순수하게 host만 뽑아왔다. 하지만 만약 __https://www.google.com__나 __https://map.googlle.com__와 같이 __www__혹은 __map__과 같은 서브도메인이 포함되었다면 따로 제거해야한다.
 
 ```
 URI.parse('https://www.google.com:80').host
@@ -31,11 +31,11 @@ host
 => "google.com"
 ```
 
-하지만 서브도메인이 `www`밖에 있을리가 만무하다. 그런다고 모든 서브도메인을 체크하는 것은 미친 짓이다. 이 때문에 정규식으로 
+하지만 서브도메인이 __www__밖에 있을리가 만무하다. 그런다고 모든 서브도메인을 체크하는 것은 미친 짓이다. 이 때문에 정규식으로 
 
  다른 방법이 없나 찾아보았는데 [Public Suffix List](https://publicsuffix.org)를 이용하는 방법이 있었다.
 
-과 같은 URI에서 `google.com`만 추출하면 된다. 보통 간단하게 `URI.parse('https://www.google.com:80').host`
+과 같은 URI에서 __google.com__만 추출하면 된다. 보통 간단하게 __URI.parse('https://www.google.com:80').host__
 
 __
  * related links

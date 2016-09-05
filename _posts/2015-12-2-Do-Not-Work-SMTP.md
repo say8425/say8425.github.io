@@ -5,7 +5,7 @@ categories: rails
 ---
 
 ## 개요
-ActionMailer 초기 구츅하는 방법은 과감하게 생략한다. [구축하는 방법](https://matharvard.ca/posts/2014/jan/11/contact-form-in-rails-4/)이 길어서 그렇지 어렵지는 않다. 조금이나마 단축하고 싶다면 [mail_form](https://github.com/plataformatec/mail_form) gem을 사용하자. 이외에 단순하게 contact us만 구성할 수 있는 [contacu_us](https://github.com/JDutil/contact_us) gem도 있다. 하지만 controller와 routes를 기본적으로 건들 수 없다. 물론 마음만 먹으면 건들 수 있지만 그 정도로 건들 것을 감안하고 만들어진 gem은 아니므로, 차라리 직접 만들거나 `mail_form` gem을 사용할 것을 추천한다.
+ActionMailer 초기 구츅하는 방법은 과감하게 생략한다. [구축하는 방법](https://matharvard.ca/posts/2014/jan/11/contact-form-in-rails-4/)이 길어서 그렇지 어렵지는 않다. 조금이나마 단축하고 싶다면 [mail_form](https://github.com/plataformatec/mail_form) gem을 사용하자. 이외에 단순하게 contact us만 구성할 수 있는 [contacu_us](https://github.com/JDutil/contact_us) gem도 있다. 하지만 controller와 routes를 기본적으로 건들 수 없다. 물론 마음만 먹으면 건들 수 있지만 그 정도로 건들 것을 감안하고 만들어진 gem은 아니므로, 차라리 직접 만들거나 __mail_form__ gem을 사용할 것을 추천한다.
 
 ## smtp 설정하기
 
@@ -29,7 +29,7 @@ config.action_mailer.smtp_settings = {
 
 > config.action_mailer.default_url_options = { host: '도메인' }
 
-mailer view에서 사용될 `url`를 설정한다. mailer_view에서는 `welcome_path`와 같은 _path helper를 사용할 수 없고, `welcome_url`과 같은 _url helper만 사용할 수 있다. 그리고 이때 사용된 _url helper의 host에 들어가는 것이 `config.action_mailer.default_url_options`이다. 이렇게 골룸하게 설정해야 하는 이유는 mailer는 controller와 달리 incoming request가 없기때문이다. 자세한 설명은 [문서](http://guides.rubyonrails.org/action_mailer_basics.html#generating-urls-in-action-mailer-views)를 참조.
+mailer view에서 사용될 __url__를 설정한다. mailer_view에서는 __welcome_path__와 같은 _path helper를 사용할 수 없고, __welcome_url__과 같은 _url helper만 사용할 수 있다. 그리고 이때 사용된 _url helper의 host에 들어가는 것이 __config.action_mailer.default_url_options__이다. 이렇게 골룸하게 설정해야 하는 이유는 mailer는 controller와 달리 incoming request가 없기때문이다. 자세한 설명은 [문서](http://guides.rubyonrails.org/action_mailer_basics.html#generating-urls-in-action-mailer-views)를 참조.
 
 ### config.action_mailer.delivery_method
 
@@ -41,7 +41,7 @@ mailer view에서 사용될 `url`를 설정한다. mailer_view에서는 `welcome
 
 > config.action_mailer.perform_deliveries = true
 
-development에서 작동여부를 [설정한다](http://stackoverflow.com/a/20770131/3910390). true시 작동하고, false시 작동안한다. `config/environments`에서 환경별로 true, false를 설정해주거나, `ENV['ACTION_MAILER_PERFORM_DELIVERIES']`와 같은 환경변수를 만들어서 관리해주자.
+development에서 작동여부를 [설정한다](http://stackoverflow.com/a/20770131/3910390). true시 작동하고, false시 작동안한다. __config/environments__에서 환경별로 true, false를 설정해주거나, __ENV['ACTION_MAILER_PERFORM_DELIVERIES']__와 같은 환경변수를 만들어서 관리해주자.
 
 ### config.action_mailer.raise_delivery_errors
 
@@ -61,7 +61,7 @@ development에서 작동여부를 [설정한다](http://stackoverflow.com/a/2077
 &nbsp;&nbsp;&nbsp;        :enable_starttls_auto => true<br>
 }
 
-smtp에 대한 설정이다. 사실 smtp만 동작하게 만들거면 `config.action_mailer.delivery_method = :smtp`만 빼고 다른 설정은 전부 필요없다.
+smtp에 대한 설정이다. 사실 smtp만 동작하게 만들거면 __config.action_mailer.delivery_method = :smtp__만 빼고 다른 설정은 전부 필요없다.
 
 #### :address
 
@@ -79,13 +79,13 @@ smtp가 접속할 주소다. 더이상 설명이 必要韓紙?
 
 > :domain               => '도메인'
 
-툭 까놓고 말해 gmail을 사용할거라면, 무엇을 넣어도 상관없다. ~~이름값을 못한다~~ 이름과 달리 `:domain`은 [HELO 도메인](https://en.wikipedia.org/wiki/Anti-spam_techniques#HELO.2FEHLO_checking)을 설정한다. 하지만 gmail smtp는 HELO 도메인을 [사용하지 않으므로](http://stackoverflow.com/a/8439535/3910390) 무엇을 입력해도 상관없다. 하지만 혹시 모르니 [유지보수 어렵게 코딩하기](http://www.hanbit.co.kr/ebook/look.html?isbn=9788979149418) 마냥 삐딱선 타지 말고 정상적으로 입력해주자. HELO 도메인은 펭귄도 이해하기 어려워서 본 문서에서는 생략하겠다.
+툭 까놓고 말해 gmail을 사용할거라면, 무엇을 넣어도 상관없다. ~~이름값을 못한다~~ 이름과 달리 __:domain__은 [HELO 도메인](https://en.wikipedia.org/wiki/Anti-spam_techniques#HELO.2FEHLO_checking)을 설정한다. 하지만 gmail smtp는 HELO 도메인을 [사용하지 않으므로](http://stackoverflow.com/a/8439535/3910390) 무엇을 입력해도 상관없다. 하지만 혹시 모르니 [유지보수 어렵게 코딩하기](http://www.hanbit.co.kr/ebook/look.html?isbn=9788979149418) 마냥 삐딱선 타지 말고 정상적으로 입력해주자. HELO 도메인은 펭귄도 이해하기 어려워서 본 문서에서는 생략하겠다.
 
 #### :user_name
 
 > :user_name            => '계정@도메인'
 
-유저네임. 즉 ID다. 주의할 점은 `say8425@gmail.com`와 같이 전체주소를 입력해줘야한다. 혹시 gmail에서 도메인을 생성해 사용하고 있다면, 역시 `say8425@penguin.com`와 같이 전체주소를 입력해줘야한다.
+유저네임. 즉 ID다. 주의할 점은 __say8425@gmail.com__와 같이 전체주소를 입력해줘야한다. 혹시 gmail에서 도메인을 생성해 사용하고 있다면, 역시 __say8425@penguin.com__와 같이 전체주소를 입력해줘야한다.
 
 #### :password
 
@@ -110,12 +110,12 @@ smtp 서버가 tls를 사용하는지 감지해서, 사용하면 켜고, 미사�
 
 사실 이렇게 설정해도 smtp는 안되는 경우가 많다. 보통 철자가 틀리거나, 서버를 껐다키지 않아 setting이 반영되지 않아 그런 걸 수 있으므로 서버를 꼭 껐다 켜보자. 하지만 펭귄의 경우 무슨 수를 써도 절대로 접속이 실패했는데, 알고보니 gmail에서 접근을 거부한 것이었다.
 
-![로그인 시도가 차단됨]({{ site.baseurl }}/images/2015-12-2-Do-Not-Work-SMTP/mail.png)`
+![로그인 시도가 차단됨]({{ site.baseurl }}/images/2015-12-2-Do-Not-Work-SMTP/mail.png)__
 
 만약 첫 접속시 이런 메일을 받았다면, 접근 거부 당한 것을 의심해봐야한다. 이 경우 [보안 수준이 낮은 앱의 액세스](https://www.google.com/settings/security/lesssecureapps)를 허용해주자. 일반 gmail의 경우 이런 일이 없었는데, 사설 도메인을 사용하자 이런 일이 발생했다. 사설 도메인이 기업용 서비스라서 생긴 이슈가 아닐까 추측만해본다.
 
 ## 결론
-사실 펭귄과 같은 이슈는 매우 드문 케이스같아 보였다. 아무리 구글링을 해도 이런 해결법은 어디에도 제시되지 않았기 때문이다. 따라서 보통은 철자가 틀리거나 서버를 껐다키지 않아 이슈가 생긴다. 반대로 말해 철자만 안틀리면 이슈가 생길리가 없다. 물론 `:authentication`이라든가 몇 가지 변수는 있으므로, 재설정하고나면 꼭 서버를 껐다키자.
+사실 펭귄과 같은 이슈는 매우 드문 케이스같아 보였다. 아무리 구글링을 해도 이런 해결법은 어디에도 제시되지 않았기 때문이다. 따라서 보통은 철자가 틀리거나 서버를 껐다키지 않아 이슈가 생긴다. 반대로 말해 철자만 안틀리면 이슈가 생길리가 없다. 물론 __:authentication__이라든가 몇 가지 변수는 있으므로, 재설정하고나면 꼭 서버를 껐다키자.
 
 ---
 * Related Links
