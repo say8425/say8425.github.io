@@ -26,7 +26,7 @@ var marker = new BMap.Marker(new BMap.Point(113.941477, 22.52946));
 chinaMap.addOverlay(marker);
 ```
 
-Google Map API에 비하면 정말 단촐하다. __new BMap.Map()__에 지도가 붙여지길 원하는 div의 ID셀렉터를 넣어주고, [여기서](http://api.map.baidu.com/lbsapi/getpoint/) 얻은 좌표값을 __centerAndZoom__에 넣어주자. 두번째 파라미터는 이름 그대로 zoom 배율이다. 구글 API와 똑같이 마커를 넣어주려면 marker에도 좌표를 넣어서 지도에 __addOverlay()__로 덧붙이면 된다. 귀찮으면 __new BMap.Point__를 변수로 선언해도 좋다. 그러면 끝! 이 아니었다.
+Google Map API에 비하면 정말 단촐하다. `new BMap.Map()`에 지도가 붙여지길 원하는 div의 ID셀렉터를 넣어주고, [여기서](http://api.map.baidu.com/lbsapi/getpoint/) 얻은 좌표값을 `centerAndZoom`에 넣어주자. 두번째 파라미터는 이름 그대로 zoom 배율이다. 구글 API와 똑같이 마커를 넣어주려면 marker에도 좌표를 넣어서 지도에 `addOverlay()`로 덧붙이면 된다. 귀찮으면 `new BMap.Point`를 변수로 선언해도 좋다. 그러면 끝! 이 아니었다.
 
 ## 여긴 어디? 난 누구?
 ![이상]({{ site.baseurl }}/images/2015-11-16-setup-baidu-map/above.png)

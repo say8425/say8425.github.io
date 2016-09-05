@@ -5,9 +5,9 @@ categories: rails
 ---
 
 1. 이름을 바꾼다. 가장 쉽고 가장 무책임한 방법이다.
-1. __rake assets:precompile__을 run 한다. 보통 이 선에서 해결된다.
-1. 안되면 __public/assets__를 날려버린다.
-1. 그래도 안되면 __tmp/cache/assets__도 날려버린다.
+1. `rake assets:precompile`을 run 한다. 보통 이 선에서 해결된다.
+1. 안되면 `public/assets`를 날려버린다.
+1. 그래도 안되면 `tmp/cache/assets`도 날려버린다.
 
 ---
 * Related Links
