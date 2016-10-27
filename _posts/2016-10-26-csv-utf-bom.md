@@ -30,7 +30,7 @@ send_data scope.to_csv,
 
 > Excel default encoding depends on the system. The workaround is to put three magical bytes to the file beginning. They are called BOM (Byte order mark) and say to the editor that file is encoded as UTF-8.
 
-대충 이런 내용이다. 엑셀은 기본적으로 시스템 인코딩을 따른다. 그리고 BOM이라는 ~신비한~ 바이트 3개를 파일이 시작될 때 넣어줘야 UTF-8이라고 인지한다.
+대충 이런 내용이다. 엑셀은 기본적으로 시스템 인코딩을 따른다. 그리고 BOM이라는 ~~신비한~~ 바이트 3개를 파일이 시작될 때 넣어줘야 UTF-8이라고 인지한다.
 
 ## BOM을 심어주자!
 그런면 BOM을 심어주자. 찾아보니 이미 [열도국에서 누군가 시도](http://qiita.com/necojackarc/items/5e865a4aa039fdd3f2c0#実装)했다.
