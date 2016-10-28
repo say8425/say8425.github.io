@@ -48,7 +48,9 @@ end
 
 ## 실제로 출력해보자
 
-```=> "\xEF\xBB\xBFid,host,port,...```
+```
+=> "\xEF\xBB\xBFid,host,port,...
+```
 
 실제로 출력해보니 위와 같이 BOM으로 시작하고 있다는 것을 확인 할 수 있었다. 결과물의 인코딩 또한 확인해봤다. 펭귄은 [서브라임에서 확인](http://stackoverflow.com/questions/16195871/how-do-i-see-the-current-encoding-of-a-file-in-sublime-text-2/16199148#16199148)했는데, 서브라임의 콘솔창을 열고 `view.encoding()`라는 명령어를 치면 된다. 보기 좋게 `'UTF-8 with BOM'`이라는 결과물을 볼 수 있을 것이다. 그리고 엑셀로 실행해보면 언제 그랬냐는 듯이 한글을 정상적으로 보여줄 것이다.
 
