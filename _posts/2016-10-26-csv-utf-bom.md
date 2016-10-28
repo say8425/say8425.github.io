@@ -40,11 +40,17 @@ require "csv"
 
 bom = %w(EF BB BF).map { |e| e.hex.chr }.join
 CSV.generate(bom) do |csv|
-  :
+  ...
 end
 ```
 
-`bom = %w(EF BB BF).map { |e| e.hex.chr }.join`은 앞서 말한 `BOM`이다. `EF BB BF`은 아스키코드화 되어서 `"\xEF\xBB\xBF"`로 조합한다. 그리고 코드에서 이 `bom`은 `generate` 함수에 들어갔다. 저것이 무슨 의미인가 [문서](https://docs.ruby-lang.org/en/2.1.0/CSV.html#method-c-generate)에서 찾아보았다. 대충 해석하면 이러하다. 생성된 block앞에 붙인다는 얘기이다. 거꾸로 말해서, block이 이 파라미터로 시작한다는 얘기이다. 실제로 직접 출력해보니 `=> "\xEF\xBB\xBFid,host,port,`와 같은 꼴로 출력되었다. 결과물의 인코딩을 확인해봤다. 펭귄은 서브라임에서 확인했는데, [확인하는 방법](http://stackoverflow.com/questions/16195871/how-do-i-see-the-current-encoding-of-a-file-in-sublime-text-2/16199148#16199148)은 서브라임의 콘솔창을 열고 `view.encoding()`라는 명령어를 치면 된다. 보기 좋게 `'UTF-8 with BOM'`이라는 결과물을 볼 수 있을 것이다. 그리고 엑셀로 실행해보면 언제 그랬냐는 듯이 한글을 정상적으로 보여줄 것이다.
+`bom = %w(EF BB BF).map { |e| e.hex.chr }.join`은 앞서 말한 `BOM`이다. `EF BB BF`은 아스키코드화 되어서 `"\xEF\xBB\xBF"`로 조합한다. 그리고 코드에서 이 `bom`은 `generate` 함수에 들어갔다. 저것이 무슨 의미인가 [문서](https://docs.ruby-lang.org/en/2.1.0/CSV.html#method-c-generate)에서 찾아보았다. 대충 해석하면 이러하다. 생성된 block앞에 붙인다는 얘기이다. 거꾸로 말해서, block이 이 파라미터로 시작한다는 얘기이다.
+
+## 실제로 출력해보자
+
+```=> "\xEF\xBB\xBFid,host,port,...```
+
+실제로 출력해보니 위와 같이 BOM으로 시작하고 있다는 것을 확인 할 수 있었다. 결과물의 인코딩 또한 확인해봤다. 펭귄은 [서브라임에서 확인](http://stackoverflow.com/questions/16195871/how-do-i-see-the-current-encoding-of-a-file-in-sublime-text-2/16199148#16199148)했는데, 서브라임의 콘솔창을 열고 `view.encoding()`라는 명령어를 치면 된다. 보기 좋게 `'UTF-8 with BOM'`이라는 결과물을 볼 수 있을 것이다. 그리고 엑셀로 실행해보면 언제 그랬냐는 듯이 한글을 정상적으로 보여줄 것이다.
 
 ---
 * Related Links
