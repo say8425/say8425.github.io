@@ -249,7 +249,6 @@ Successfully installed naver_map-0.1.0
 Parsing documentation for naver_map-0.1.0
 Done installing documentation for naver_map after 0 seconds
 1 gem installed
-
 ```
 
 설치가 성공한 것을 확인 할 수 있을 것이다. 이제 gem을 직접 사용해보자. 
