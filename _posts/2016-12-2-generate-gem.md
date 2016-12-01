@@ -5,7 +5,9 @@ categories: rails
 ---
 
 ## 개요
-루비를 쓰다보면 정말로 많은 gem들을 사용하게 된다. 정말 사용하기 편하고 프로젝트 개발 시간도 훨씬 줄여준다. 그런데 가끔씩 내가 원하는 gem이 없을때가 있다. 이럴때는 어쩔 수 없이 직접 작성하거나 혹은 다른 엯촋분들이 작성해주기를 기다려야한데, 한번 직접 gem을 만들어 보는 것은 어떨까? 물론 누구나 한번씩은 gem을 직접 만들어오는 망상(?)을 해봤을 것이다. 하지만 어디서부터 시작해야할지 난감하고 어려운 거 아니야?? 하는 두려움도 있을 것이다. 그래서 펭귄이 직접 맨땅 헤딩해본 경험을 공유해본다.
+루비를 쓰다보면 정말 많은 gem을 사용하게 된다. 정말 사용하기 편하고 프로젝트 개발 시간도 훨씬 줄여준다. 하지만 가끔씩 내가 원하는 gem이 없을때가 있다. 이럴때는 어쩔 수 없이 직접 작성하거나 혹은 다른 엯촋분들이 작성해주기를 기다릴 수 밖에 없다. 
+
+한번 직접 gem을 만들어 보는 것은 어떨까? 펭귄도 이런 망상(?)을 많이 했다. 그리고 우연히 만들게 된 계기가 있어서 직접 어떻게 만들었는지 여기에 공유해본다.
 
 ## NEW GEM
 처음 gem을 만들게 된 계기는 Z사의 코딩 과제였다. 
@@ -16,7 +18,7 @@ Naver API를 사용해서 좌표는 주소로, 주소는 좌표로 반환 받는
 
 사실 rest를 쏘는 코드는 많이 작성해봐서 자신 있었다. 그런데 이거를 그냥 만들기는 너무 심심해서 한번 gem으로 만들어보는 것은 어떨까 생각해봤다. 게다가 마침 소스 사이즈도 얼마 안할 거라는 판단이 들어서 시도해봤다. 
 
-우선 예전에 Ruby Mine에서 얼핏 새 gem 만들기를 본 적 있는 거 같아서 New Project..를 실행해봤다. 럭키! 정말 있었다.
+우선 예전에 Ruby Mine에서 얼핏 새 gem 만들기를 본 적 있는 거 같아서 _New Project.._ 를 실행해봤다. 럭키! 정말 있었다.
 
 ![Ruby Mine New Gem]({{ site.baseurl }}/images/2016-12-2-generate-gem/new-gem.png)
 
@@ -42,7 +44,10 @@ Naver API를 사용해서 좌표는 주소로, 주소는 좌표로 반환 받는
 ```
 
 ## gem 정보 입력하기
-우선 우리가 만든 gem의 정보를 입력해주자 `naver_map.gemspec`이라는 파일이 있을 것이다. 열어오면 아래와 같은 코드가 나올 것이다.
+
+### gem 정보는 gemspec에서 입력한다
+
+우선 우리가 만든 gem의 정보를 입력해주자 `naver_map.gemspec`이라는 파일이 있을 것이다. 열면 아래와 같은 코드가 나올 것이다.
 
 ```ruby
 # coding: utf-8
@@ -159,6 +164,8 @@ end
 
 ## 코딩하기
 
+### 본격적인 소스는 lib에서
+
 지겨운 설정은 이쯤에서 마무리 짓고, 이제 직접 코딩해보자. 디렉토리중에서 `lib`이라고 있을 것이다. gem이 작동하는 코드는 이 디렉토리에 있다. `lib/naver_map.rb`를 열어보자.
 
 ```ruby
@@ -169,48 +176,122 @@ module MyGem
 end
 ```
 
-
-
-
-
-
-사실 펭귄도 지금까지 페이지 넘기는거, 페이지 목록, 페이지 리스트 등등 두리뭉실하게 불렀는데, 이걸 pagination이라고 부른다는 거 이번에 처음 알게되었다.
-pagination을 만들어주는 gem은 몇 개 없다. 대표적인 gem으로 [kaminari](https://github.com/amatsuda/kaminari)와 [will_paginate](https://github.com/mislav/will_paginate)가 있으며, 이 중 펭귄은 will_paginate를 이미 사용하고 있어서, 이 gem으로 만들기로 했다. 물론 [kaminari로도 만들 수 있으니](https://github.com/amatsuda/kaminari/wiki/How-To%3A-Create-Infinite-Scrolling-with-jQuery), 관심있다면 구글신께 신탁을 받아보자.
-
-## 시작은 똑같으리니..
-
-will_paginate gem 설치하는 방법은 생략하겠다. 이미 [gitHub문서](https://github.com/mislav/will_paginate/wiki/Installation)에 상세히 나와있고, 특별히 어려운 거 없이 Gemfile.rb에 붙이고, `bundle install` 돌려주면 끝이다.
+`module` 이라는 생소한 블락이 보일 것이다. 이 module은 여러 클래스에서 사용할 수 있는 메소드를 제공하는 블락이다. 하지만 펭귄은 단 하나의 클래스면 충분하므로 이 module을 지우고 class에서 코딩하기로 했다. 코딩은 평소 루비에서 코딩하듯이 하면 된다. 펭귄이 당시 코딩한 초기 소스는 아래와 같았다.
 
 ```ruby
-# CreatorsController
-def index
-  @creators = Creator.all.paginate(page: params[:page], per_page: 2)
-...
+require 'naver_map/version'
+require 'rest-client'
+require 'json'
+
+class NaverMap
+  attr_accessor :client_id, :client_secret
+
+  def initialize(client_id, client_secret)
+    @client_id = client_id
+    @client_secret = client_secret
+  end
+
+  def address_to_coordinates(address)
+    begin
+      url = 'https://openapi.naver.com/v1/map/geocode'
+      response = RestClient.get(url, params: { query: address }, 'X-Naver-Client-Id': @client_id,
+                                'X-Naver-Client-Secret': @client_secret)
+      result = JSON.parse(response.body, symbolize_names: true)[:result]
+      result[:items].map do |element| element[:point] end
+    rescue RestClient::ExceptionWithResponse => err
+      err.response.body
+    end
+  end
+
+
+  def query(address)
+    begin
+      url = 'https://openapi.naver.com/v1/map/geocode'
+      response = RestClient.get(url, params: { query: address }, 'X-Naver-Client-Id': @client_id,
+                                'X-Naver-Client-Secret': @client_secret)
+      JSON.parse(response.body, symbolize_names: true)[:result]
+    rescue RestClient::ExceptionWithResponse => err
+      err.response.body
+    end
+  end
+
+  def to_s
+    "Client ID: #{@client_id}, Client Secret: #{@client_secret}"
+  end
 end
 ```
 
-그리고 more button을 적용하고 싶은 곳의 컨트롤러에 will_paginate를 세팅하자. 펭귄은 Creator모델 전체를 대상으로 삼았다. 여기에 paginate를 걸어주자. 그리고 매 로드마다 몇개씩 불러올지 `per_page`로 설정하자. 여기까지는 `will_paginate` 기본 세팅하는 방법과 똑같다. 이후가 다르다.
+상당히 엉망진창 초기 소스다. 혹시 소스가 화가 난다면 많은 풀리와 이슈 부탁한다. 일단 의도한 바는 `NaverMap.new('클라이언트 키', '클라이언트 비밀키')`로 객체를 생성하고 이 객체로 좌표나 주소를 받아오는 것이었다. 한번 직접 gem을 설치해서 테스트해보자.
 
-##
-만약 평범한 pagination을 만들고 싶다면, view 파일에 partial를 render해주고, 하단에 `<%= will_paginate @creators %>`를 붙여주면 끝이다. 하지만 우리는 원하는 것은 more 버튼이라서 다른 방법을 찾아야 한다.
+### gme 빌드하기
 
-우선 partial를 render해주는 점은 똑같다. 앞서 말했듯이 more button은 pagination과 똑같다. 다만 요청된 새로운 페이지를 예전 페이지와 교체하는 것이 아니고 예전 페이지의 뒤에 이어서 붙이는 거다.
+우선 gem을 빌드해야한다. 빌드하려면 터미널에 다음과 같은 명령을 쳐주면 된다.
 
-정리하면 partial를 렌더한다. 뒤에 새로운 페이지를 요청하는 more button을 배치한다. 요청을 하면 새로운 페이지를 받아와서 기존 render된 partial뒤에 붙여준다. more button은 table에 row가 아직 남아있다면 새로운 페이지를 가리키게 하고, 없으면 지워버린다. 로 정리될 수 있다.
+```
+gem build naver_map.gemspec 
+```
 
+```
+Successfully built RubyGem
+  Name: naver_map
+  Version: 0.1.0
+  File: naver_map-0.2.3.gem
+```
 
+그러면 디렉토리에 `naver_map-0.1.0.gem`이라는 gem이 생성 된 것을 볼 수 있을 것이다. 이 gem을 설치하자. 설치는 평소 하던 명령어와 똑같다.
 
+```
+gem install naver_map-0.1.0
+```
 
-## 결론
-사실 펭귄과 같은 이슈는 매우 드문 케이스같아 보였다. 아무리 구글링을 해도 이런 해결법은 어디에도 제시되지 않았기 때문이다. 따라서 보통은 철자가 틀리거나 서버를 껐다키지 않아 이슈가 생긴다. 반대로 말해 철자만 안틀리면 이슈가 생길리가 없다. 물론 `:authentication`이라든가 몇 가지 변수는 있으므로, 재설정하고나면 꼭 서버를 껐다키자.
+```
+Successfully installed naver_map-0.1.0
+Parsing documentation for naver_map-0.1.0
+Done installing documentation for naver_map after 0 seconds
+1 gem installed
+
+```
+
+설치가 성공한 것을 확인 할 수 있을 것이다. 이제 gem을 직접 사용해보자. 
+
+### 실행해보기
+
+irb를 실행하자. 그리고 `require 'naver_map'`이라고 명령하자. `true`가 반환되면 성공 한 것이다. 그럼 테스트를 해보자.
+
+```
+test = NaverMap.new('클라이언트 키', '클라이언트 비밀키')
+=> #<NaverMap:0x007fd2c115b0a8 @client_id="클라이언트 키", @client_secret="클라이언트 시크릿">
+test.address_to_coordinates('서울특별시 중구 세종대로 110 서울특별시청')
+=> [{:x=>126.9783882, :y=>37.5666103}]
+```
+
+잘된다면 성공한 것이다. 이제 이 gem을 푸시하자. 
+
+## gem 푸시하기
+
+gem을 푸사하기전에 우선 필요한 것이 있다. [루비젬](https://rubygems.org) 계정과 인증서이다. 우선 루비젬에서 계정을 만들자. 그리고 인증서를 다운받자. 인증서를 다운 받는 명령어는 아래와 같다.
+
+```
+$ curl -u 계정명 https://rubygems.org/api/v1/api_key.yaml >
+~/.gem/credentials; chmod 0600 ~/.gem/credentials
+```
+
+```
+Enter host password for user '계정명':
+```
+명령어를 치면 비밀번호를 입력받을 것이다. 입력해주고 세팅을 마무리해주자. 그러면 gem을 푸시할 준비는 끝났다. 아래 명령어로 gem을 푸시하자.
+
+```
+gem push naver_map-0.1.0.gem
+```
+
+이후 성공했다는 메시지가 뜬다면 성공한 것이다. 이후 `gem install`로 평범하게 gem 설치하듯이 어디서나 다운 받고 설치 할 수 있다.
 
 ---
 * Related Links
-  * [will_pagiante Gem](https://github.com/mislav/will_paginate)
-  * [unlimited scroll 하는 법](http://www.sitepoint.com/infinite-scrolling-rails-basics/)
-  * [세팅하는 방법에 대한 StackOverflow 문서, 가장 도움되었다](http://stackoverflow.com/a/23591939/3910390)
-  * [세팅하는 방법에 대한 StackOverflow 문서 2](http://stackoverflow.com/questions/8378443/will-paginate-with-load-more-button-in-rails-3-1-using-jquery)
-  * [세팅하는 방법에 대한 StackOverflow 문서 3](http://stackoverflow.com/questions/5543719/rails-3-kaminari-jquery-load-more-button-problem-to-display-results-it-loads)
-  * [ajaxf르 어떻게 짜야할지 힌트를 얻은 StackOverflow 문서](http://stackoverflow.com/questions/7188287/rails-will-paginate-show-next-10-button)
-  * [pagination대신 다른걸 만드는 법에 대한 StackOverflow 문서, 시도는 안해봤다](http://stackoverflow.com/questions/2497821/rails-load-more-instead-of-pagination)
-  * [kaminari로 more button 만들기](https://github.com/amatsuda/kaminari/wiki/How-To%3A-Create-Infinite-Scrolling-with-jQuery)
+  * [gem 만들어 보기 공식 가이드 번역 문서 - 번역해주셔서 고맙습니다](http://ruby-korea.github.io/rubygems-guides/make-your-own-gem/)
+  * [가장 많이 도움 받은 문서](https://quickleft.com/blog/engineering-lunch-series-step-by-step-guide-to-building-your-first-ruby-gem/)
+  * [gem 버저닝과 이름 짓는 법에 대해 도움 받은 문서](https://www.netguru.co/blog/creating-a-gem-a-step-by-step-tutorial)
+  * [gem 초기 세팅할때 도움 받은 문서](http://icebergist.com/posts/creating-and-publishing-a-ruby-gem/)
+  * [어떤 gem을 만들 것인가 방향을 정하는 법을 알려주는 문서](http://www.justinweiss.com/articles/a-guide-to-extracting-your-first-ruby-gem/)
+
