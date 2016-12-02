@@ -5,8 +5,7 @@ categories: rails
 ---
 
 ## 2016 루비 대림절
-[2016년 루비 대림절](http://ruby-korea.github.io/advent-calendar/) 글을 작성하게 되었습니다. 무려 2016년 12월 콩일에 작
-성하게 되어 영광(?)입니다.
+[2016년 루비 대림절](http://ruby-korea.github.io/advent-calendar/) 글을 작성하게 되었습니다. 무려 2016년 12월 콩일에 작성하게 되어 영광(?)입니다.
 
 앞선 12월 1일에는 [아샬님](https://github.com/ahastudio)이 [루비로 DSL을 구현하는 법](https://github.com/ahastudio/til/blob/master/ruby/20161201-edsl.md)을 작성했으며, 다음 12월 3일에는 [샤왕자님](https://github.com/riseshia)이 [루비 2.4 변경점에 대한 글](http://riseshia.github.io/2016/12/01/ruby-2-4-0-preview.html)을 작성했습니다. 모두 훌륭한 글이니 함께 읽어주세요. 다른날에는 어떤 글들이 올라오고 있을까 궁금하신 분들은 [2016 루비 대림절 달력](http://ruby-korea.github.io/advent-calendar/)을 확인해주세요.
 
@@ -228,7 +227,7 @@ end
 
 상당히 엉망진창 초기 소스다. 혹시 소스가 화가 난다면 많은 풀리와 이슈 부탁한다. 일단 의도한 바는 `NaverMap.new('클라이언트 키', '클라이언트 비밀키')`로 객체를 생성하고 이 객체로 좌표나 주소를 받아오는 것이었다. 한번 직접 gem을 설치해서 테스트해보자.
 
-### gme 빌드하기
+### gem 빌드하기
 우선 gem을 빌드해야한다. 빌드하려면 터미널에 다음과 같은 명령을 쳐주면 된다.
 
 ```
