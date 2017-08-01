@@ -5,7 +5,7 @@ categories: rails
 ---
 
 Travis CI는 test 환경을 구축해 테스트 하는 것은 물론, 통과된 테스트를 자동으로 deploy 할 수 있다. 
-[수 많은 deploy 방법](https://docs.travis-ci.com/user/deployment/)을 지원하는데, 펭귄은 그 중 rails를 AWS Elastic Beanstalk(이하 EB)에 배포 자동화 했던 경험을 공유하겠다. 참고로 이 포스팅은 [7월 4일 AWSKrug에서 발표 했던 것](https://www.meetup.com/ko-KR/awskrug/events/241160036/?eventId=241160036)을 토대로 작성한 포스트다.
+[수 많은 deploy 방법](https://docs.travis-ci.com/user/deployment/)을 지원하는데, 펭귄은 그 중 rails를 AWS Elastic Beanstalk(이하 EB)에 배포 자동화 했던 경험을 공유하겠다. 참고로 이 포스팅은 [7월 4일 AWSKrug 한 발표](https://www.meetup.com/ko-KR/awskrug/events/241160036/?eventId=241160036)을 토대로 작성한 포스트다.
 
 ## travis 환경 구축
 
