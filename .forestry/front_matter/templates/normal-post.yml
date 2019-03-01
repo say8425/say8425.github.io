@@ -1,0 +1,20 @@
+---
+label: normal post
+hide_body: false
+is_partial: false
+fields:
+- type: text
+  name: title
+  label: Title
+  config:
+    required: true
+- type: textarea
+  name: content
+  label: Content
+  config:
+    wysiwyg: true
+    schema:
+      format: markdown
+- type: list
+  name: reference
+  label: Reference
