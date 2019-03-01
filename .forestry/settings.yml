@@ -10,7 +10,7 @@ sections:
   create: all
   match: "**/*"
 - type: document
-  path: _post/*
+  path: _post/**/*
   label: Post
 upload_dir: assets
 public_path: "/assets"
