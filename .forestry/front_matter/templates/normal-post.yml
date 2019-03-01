@@ -18,3 +18,5 @@ fields:
 - type: list
   name: reference
   label: Reference
+pages:
+- _posts/sdfsdfsfsdfs.md
