@@ -12,12 +12,11 @@ sections:
 - type: document
   path: _post
   label: Post
-  match: "**/*"
-upload_dir: uploads
-public_path: "/uploads"
+upload_dir: assets
+public_path: "/assets"
 front_matter_path: ''
 use_front_matter_path: false
-file_template: ":filename:"
+file_template: ":year:/:month:/:day:/:filename:"
 build:
   preview_command: vuepress build -d .vuepress/dist
   publish_command: vuepress build -d .vuepress/dist
